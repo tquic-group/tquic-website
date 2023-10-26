@@ -1,0 +1,16 @@
+{
+  "title": "延伸阅读",
+  "description": "更多关于TQUIC库的补充文档",
+  "slug": "/category/further-readings",
+  "permalink": "/zh/docs/category/further-readings",
+  "navigation": {
+    "previous": {
+      "title": "开发相关",
+      "permalink": "/zh/docs/faq/development"
+    },
+    "next": {
+      "title": "类似项目比较",
+      "permalink": "/zh/docs/further_readings/comparison"
+    }
+  }
+}

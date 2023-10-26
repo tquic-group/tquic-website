@@ -1,0 +1,31 @@
+{
+  "unversionedId": "further_readings/benchmark",
+  "id": "further_readings/benchmark",
+  "title": "Benchmark",
+  "description": "Methods for testing",
+  "source": "@site/docs/further_readings/benchmark.md",
+  "sourceDirName": "further_readings",
+  "slug": "/further_readings/benchmark",
+  "permalink": "/docs/further_readings/benchmark",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/further_readings/benchmark.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "Oct 26, 2023",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Benchmark",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Comparison",
+    "permalink": "/docs/further_readings/comparison"
+  },
+  "next": {
+    "title": "Conformance",
+    "permalink": "/docs/further_readings/conformance"
+  }
+}

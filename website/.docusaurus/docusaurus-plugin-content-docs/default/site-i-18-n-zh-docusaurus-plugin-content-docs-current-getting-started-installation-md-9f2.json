@@ -1,0 +1,31 @@
+{
+  "unversionedId": "getting_started/installation",
+  "id": "getting_started/installation",
+  "title": "安装",
+  "description": "支持平台",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/getting_started/installation.md",
+  "sourceDirName": "getting_started",
+  "slug": "/getting_started/installation",
+  "permalink": "/zh/docs/getting_started/installation",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/getting_started/installation.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "2023年10月26日",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "安装",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Getting Started",
+    "permalink": "/zh/docs/category/getting-started"
+  },
+  "next": {
+    "title": "示例工具",
+    "permalink": "/zh/docs/getting_started/demo"
+  }
+}

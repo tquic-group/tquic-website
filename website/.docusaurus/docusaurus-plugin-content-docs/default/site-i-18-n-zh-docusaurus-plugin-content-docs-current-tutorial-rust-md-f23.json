@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorial/rust",
+  "id": "tutorial/rust",
+  "title": "使用Rust语言接口",
+  "description": "本文介绍应用程序如何使用RUST语言的TQUIC接口。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/tutorial/rust.md",
+  "sourceDirName": "tutorial",
+  "slug": "/tutorial/rust",
+  "permalink": "/zh/docs/tutorial/rust",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial/rust.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "xiaofei0800",
+  "lastUpdatedAt": 1698329259,
+  "formattedLastUpdatedAt": "2023年10月26日",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "使用Rust语言接口",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "核心概念",
+    "permalink": "/zh/docs/tutorial/core_concepts"
+  },
+  "next": {
+    "title": "使用C语言接口",
+    "permalink": "/zh/docs/tutorial/c"
+  }
+}

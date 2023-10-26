@@ -1,0 +1,16 @@
+{
+  "title": "快速开始",
+  "description": "快速上手使用TQUIC",
+  "slug": "/category/getting-started",
+  "permalink": "/zh/docs/category/getting-started",
+  "navigation": {
+    "previous": {
+      "title": "介绍",
+      "permalink": "/zh/docs/intro"
+    },
+    "next": {
+      "title": "安装",
+      "permalink": "/zh/docs/getting_started/installation"
+    }
+  }
+}

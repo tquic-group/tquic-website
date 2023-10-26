@@ -1,0 +1,31 @@
+{
+  "unversionedId": "further_readings/comparison",
+  "id": "further_readings/comparison",
+  "title": "类似项目比较",
+  "description": "业界目前包括很多的QUIC实现。但是，我们只选取了其中部分进行比较。我们选择的依据主要如下:",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/further_readings/comparison.md",
+  "sourceDirName": "further_readings",
+  "slug": "/further_readings/comparison",
+  "permalink": "/zh/docs/further_readings/comparison",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/further_readings/comparison.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "2023年10月26日",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "类似项目比较",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Further Readings",
+    "permalink": "/zh/docs/category/further-readings"
+  },
+  "next": {
+    "title": "性能测试",
+    "permalink": "/zh/docs/further_readings/benchmark"
+  }
+}

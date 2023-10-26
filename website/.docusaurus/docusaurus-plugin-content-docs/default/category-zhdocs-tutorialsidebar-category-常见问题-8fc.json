@@ -1,0 +1,16 @@
+{
+  "title": "常见问题",
+  "description": "关于TQUIC协议库各方面的常见问题的解答",
+  "slug": "/category/frequently-asked-questions",
+  "permalink": "/zh/docs/category/frequently-asked-questions",
+  "navigation": {
+    "previous": {
+      "title": "发布流程",
+      "permalink": "/zh/docs/how_to_contribute/releasing_process"
+    },
+    "next": {
+      "title": "安装相关",
+      "permalink": "/zh/docs/faq/installation"
+    }
+  }
+}

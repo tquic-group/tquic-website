@@ -1,0 +1,16 @@
+{
+  "title": "用户指南",
+  "description": "TQUIC协议库使用指南",
+  "slug": "/category/tutorial",
+  "permalink": "/zh/docs/category/tutorial",
+  "navigation": {
+    "previous": {
+      "title": "下一步",
+      "permalink": "/zh/docs/getting_started/next"
+    },
+    "next": {
+      "title": "核心概念",
+      "permalink": "/zh/docs/tutorial/core_concepts"
+    }
+  }
+}

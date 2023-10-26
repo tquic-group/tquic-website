@@ -1,0 +1,31 @@
+{
+  "unversionedId": "how_to_contribute/contribute_codes",
+  "id": "how_to_contribute/contribute_codes",
+  "title": "How to contribute codes",
+  "description": "The purpose of this document is to guide you through the process of developing TQUIC in a local environment and submitting your changes to the official TQUIC repository.",
+  "source": "@site/docs/how_to_contribute/contribute_codes.md",
+  "sourceDirName": "how_to_contribute",
+  "slug": "/how_to_contribute/contribute_codes",
+  "permalink": "/docs/how_to_contribute/contribute_codes",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/how_to_contribute/contribute_codes.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "Oct 26, 2023",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "How to contribute codes",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Contributing",
+    "permalink": "/docs/category/contributing"
+  },
+  "next": {
+    "title": "How to contribute documents",
+    "permalink": "/docs/how_to_contribute/contribute_docs"
+  }
+}

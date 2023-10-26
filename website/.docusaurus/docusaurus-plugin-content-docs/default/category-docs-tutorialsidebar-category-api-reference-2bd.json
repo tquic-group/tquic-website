@@ -1,0 +1,16 @@
+{
+  "title": "API Reference",
+  "description": "API Reference of the TQUIC library.",
+  "slug": "/category/api-reference",
+  "permalink": "/docs/category/api-reference",
+  "navigation": {
+    "previous": {
+      "title": "Using the C API",
+      "permalink": "/docs/tutorial/c"
+    },
+    "next": {
+      "title": "Rust QUIC API Reference",
+      "permalink": "/docs/api_reference/rust_quic"
+    }
+  }
+}

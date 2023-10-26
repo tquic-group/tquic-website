@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorial/rust",
+  "id": "tutorial/rust",
+  "title": "Using the Rust API",
+  "description": "This tutorial describes how to use the TQUIC RUST API.",
+  "source": "@site/docs/tutorial/rust.md",
+  "sourceDirName": "tutorial",
+  "slug": "/tutorial/rust",
+  "permalink": "/docs/tutorial/rust",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial/rust.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "Oct 26, 2023",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Using the Rust API",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Core concepts",
+    "permalink": "/docs/tutorial/core_concepts"
+  },
+  "next": {
+    "title": "Using the C API",
+    "permalink": "/docs/tutorial/c"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "unversionedId": "faq/trouble_shooting",
+  "id": "faq/trouble_shooting",
+  "title": "Trouble shooting",
+  "description": "How to analyze encrypted QUIC traffic?",
+  "source": "@site/docs/faq/trouble_shooting.md",
+  "sourceDirName": "faq",
+  "slug": "/faq/trouble_shooting",
+  "permalink": "/docs/faq/trouble_shooting",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/faq/trouble_shooting.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "Oct 26, 2023",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Trouble shooting",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Performance",
+    "permalink": "/docs/faq/performance"
+  },
+  "next": {
+    "title": "Development",
+    "permalink": "/docs/faq/development"
+  }
+}

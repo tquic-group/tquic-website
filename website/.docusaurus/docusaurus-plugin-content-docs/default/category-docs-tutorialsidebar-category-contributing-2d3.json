@@ -1,0 +1,16 @@
+{
+  "title": "Contributing",
+  "description": "Guidelines for engagement in the TQUIC project.",
+  "slug": "/category/contributing",
+  "permalink": "/docs/category/contributing",
+  "navigation": {
+    "previous": {
+      "title": "C/C++ HTTP/3 API Reference",
+      "permalink": "/docs/api_reference/c_h3"
+    },
+    "next": {
+      "title": "How to contribute codes",
+      "permalink": "/docs/how_to_contribute/contribute_codes"
+    }
+  }
+}

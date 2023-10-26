@@ -1,0 +1,31 @@
+{
+  "unversionedId": "api_reference/c_h3",
+  "id": "api_reference/c_h3",
+  "title": "C/C++语言HTTP/3接口说明",
+  "description": "准备工作",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/api_reference/c_h3.md",
+  "sourceDirName": "api_reference",
+  "slug": "/api_reference/c_h3",
+  "permalink": "/zh/docs/api_reference/c_h3",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/api_reference/c_h3.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "wangfuyu",
+  "lastUpdatedAt": 1698327438,
+  "formattedLastUpdatedAt": "2023年10月26日",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "C/C++语言HTTP/3接口说明",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "C/C++语言QUIC接口说明",
+    "permalink": "/zh/docs/api_reference/c_quic"
+  },
+  "next": {
+    "title": "Contributing",
+    "permalink": "/zh/docs/category/contributing"
+  }
+}

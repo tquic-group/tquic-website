@@ -1,0 +1,31 @@
+{
+  "unversionedId": "api_reference/c_h3",
+  "id": "api_reference/c_h3",
+  "title": "C/C++ HTTP/3 API Reference",
+  "description": "Preliminaries",
+  "source": "@site/docs/api_reference/c_h3.md",
+  "sourceDirName": "api_reference",
+  "slug": "/api_reference/c_h3",
+  "permalink": "/docs/api_reference/c_h3",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/api_reference/c_h3.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "wangfuyu",
+  "lastUpdatedAt": 1698327438,
+  "formattedLastUpdatedAt": "Oct 26, 2023",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "C/C++ HTTP/3 API Reference",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "C/C++ QUIC API Reference",
+    "permalink": "/docs/api_reference/c_quic"
+  },
+  "next": {
+    "title": "Contributing",
+    "permalink": "/docs/category/contributing"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "unversionedId": "faq/usage",
+  "id": "faq/usage",
+  "title": "使用相关",
+  "description": "TQUIC是否支持移动端平台?",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/faq/usage.md",
+  "sourceDirName": "faq",
+  "slug": "/faq/usage",
+  "permalink": "/zh/docs/faq/usage",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/faq/usage.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "2023年10月26日",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "使用相关",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "安装相关",
+    "permalink": "/zh/docs/faq/installation"
+  },
+  "next": {
+    "title": "性能相关",
+    "permalink": "/zh/docs/faq/performance"
+  }
+}

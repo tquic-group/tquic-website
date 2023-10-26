@@ -1,0 +1,31 @@
+{
+  "unversionedId": "api_reference/c_quic",
+  "id": "api_reference/c_quic",
+  "title": "C/C++ QUIC API Reference",
+  "description": "Preliminaries",
+  "source": "@site/docs/api_reference/c_quic.md",
+  "sourceDirName": "api_reference",
+  "slug": "/api_reference/c_quic",
+  "permalink": "/docs/api_reference/c_quic",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/api_reference/c_quic.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "Oct 26, 2023",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "C/C++ QUIC API Reference",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Rust HTTP/3 API Reference",
+    "permalink": "/docs/api_reference/rust_h3"
+  },
+  "next": {
+    "title": "C/C++ HTTP/3 API Reference",
+    "permalink": "/docs/api_reference/c_h3"
+  }
+}

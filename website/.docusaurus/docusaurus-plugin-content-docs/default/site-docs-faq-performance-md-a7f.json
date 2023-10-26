@@ -1,0 +1,31 @@
+{
+  "unversionedId": "faq/performance",
+  "id": "faq/performance",
+  "title": "Performance",
+  "description": "How fast is TQUIC?",
+  "source": "@site/docs/faq/performance.md",
+  "sourceDirName": "faq",
+  "slug": "/faq/performance",
+  "permalink": "/docs/faq/performance",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/faq/performance.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "Oct 26, 2023",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Performance",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Usage",
+    "permalink": "/docs/faq/usage"
+  },
+  "next": {
+    "title": "Trouble shooting",
+    "permalink": "/docs/faq/trouble_shooting"
+  }
+}

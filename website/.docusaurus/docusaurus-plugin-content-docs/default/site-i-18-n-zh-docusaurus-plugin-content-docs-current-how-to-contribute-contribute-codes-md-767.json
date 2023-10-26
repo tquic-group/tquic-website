@@ -1,0 +1,31 @@
+{
+  "unversionedId": "how_to_contribute/contribute_codes",
+  "id": "how_to_contribute/contribute_codes",
+  "title": "贡献代码",
+  "description": "本文目的在于指导你如何在本地开发TQUIC，并将修改提交到官方TQUIC代码库。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/how_to_contribute/contribute_codes.md",
+  "sourceDirName": "how_to_contribute",
+  "slug": "/how_to_contribute/contribute_codes",
+  "permalink": "/zh/docs/how_to_contribute/contribute_codes",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/how_to_contribute/contribute_codes.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "2023年10月26日",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "贡献代码",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Contributing",
+    "permalink": "/zh/docs/category/contributing"
+  },
+  "next": {
+    "title": "贡献文档",
+    "permalink": "/zh/docs/how_to_contribute/contribute_docs"
+  }
+}

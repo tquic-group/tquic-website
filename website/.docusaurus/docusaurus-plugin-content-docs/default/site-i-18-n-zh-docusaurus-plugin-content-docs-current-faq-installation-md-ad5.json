@@ -1,0 +1,31 @@
+{
+  "unversionedId": "faq/installation",
+  "id": "faq/installation",
+  "title": "安装相关",
+  "description": "运行TQUIC自定义构建命令失败?",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/faq/installation.md",
+  "sourceDirName": "faq",
+  "slug": "/faq/installation",
+  "permalink": "/zh/docs/faq/installation",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/faq/installation.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "2023年10月26日",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "安装相关",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Frequently Asked Questions",
+    "permalink": "/zh/docs/category/frequently-asked-questions"
+  },
+  "next": {
+    "title": "使用相关",
+    "permalink": "/zh/docs/faq/usage"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "unversionedId": "getting_started/next",
+  "id": "getting_started/next",
+  "title": "Next step",
+  "description": "If you want to use TQUIC in your program, refer to the Tutorial",
+  "source": "@site/docs/getting_started/next.md",
+  "sourceDirName": "getting_started",
+  "slug": "/getting_started/next",
+  "permalink": "/docs/getting_started/next",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/getting_started/next.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "Oct 26, 2023",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Next step",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Example tools",
+    "permalink": "/docs/getting_started/demo"
+  },
+  "next": {
+    "title": "Tutorial",
+    "permalink": "/docs/category/tutorial"
+  }
+}

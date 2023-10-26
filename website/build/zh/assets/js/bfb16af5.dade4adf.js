@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktquic_website=self.webpackChunktquic_website||[]).push([[5909],{5392:e=>{e.exports=JSON.parse('[{"label":"tquic","permalink":"/zh/blog/tags/tquic","count":1},{"label":"quic","permalink":"/zh/blog/tags/quic","count":1},{"label":"rust","permalink":"/zh/blog/tags/rust","count":1}]')}}]);

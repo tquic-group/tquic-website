@@ -1,0 +1,31 @@
+{
+  "unversionedId": "how_to_contribute/development_guides",
+  "id": "how_to_contribute/development_guides",
+  "title": "开发指南",
+  "description": "项目顶级目录结构",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/how_to_contribute/development_guides.md",
+  "sourceDirName": "how_to_contribute",
+  "slug": "/how_to_contribute/development_guides",
+  "permalink": "/zh/docs/how_to_contribute/development_guides",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/how_to_contribute/development_guides.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1698315019,
+  "formattedLastUpdatedAt": "2023年10月26日",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "开发指南",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "贡献文档",
+    "permalink": "/zh/docs/how_to_contribute/contribute_docs"
+  },
+  "next": {
+    "title": "发布流程",
+    "permalink": "/zh/docs/how_to_contribute/releasing_process"
+  }
+}

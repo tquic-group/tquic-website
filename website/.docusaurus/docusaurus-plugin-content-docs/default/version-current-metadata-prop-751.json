@@ -1,0 +1,358 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "tutorialSidebar": [
+      {
+        "type": "link",
+        "label": "介绍",
+        "href": "/zh/docs/intro",
+        "docId": "intro"
+      },
+      {
+        "type": "category",
+        "label": "快速开始",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "安装",
+            "href": "/zh/docs/getting_started/installation",
+            "docId": "getting_started/installation"
+          },
+          {
+            "type": "link",
+            "label": "示例工具",
+            "href": "/zh/docs/getting_started/demo",
+            "docId": "getting_started/demo"
+          },
+          {
+            "type": "link",
+            "label": "下一步",
+            "href": "/zh/docs/getting_started/next",
+            "docId": "getting_started/next"
+          }
+        ],
+        "href": "/zh/docs/category/getting-started"
+      },
+      {
+        "type": "category",
+        "label": "用户指南",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "核心概念",
+            "href": "/zh/docs/tutorial/core_concepts",
+            "docId": "tutorial/core_concepts"
+          },
+          {
+            "type": "link",
+            "label": "使用Rust语言接口",
+            "href": "/zh/docs/tutorial/rust",
+            "docId": "tutorial/rust"
+          },
+          {
+            "type": "link",
+            "label": "使用C语言接口",
+            "href": "/zh/docs/tutorial/c",
+            "docId": "tutorial/c"
+          }
+        ],
+        "href": "/zh/docs/category/tutorial"
+      },
+      {
+        "type": "category",
+        "label": "接口文档",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Rust语言QUIC接口说明",
+            "href": "/zh/docs/api_reference/rust_quic",
+            "docId": "api_reference/rust_quic"
+          },
+          {
+            "type": "link",
+            "label": "Rust语言HTTP/3接口说明",
+            "href": "/zh/docs/api_reference/rust_h3",
+            "docId": "api_reference/rust_h3"
+          },
+          {
+            "type": "link",
+            "label": "C/C++语言QUIC接口说明",
+            "href": "/zh/docs/api_reference/c_quic",
+            "docId": "api_reference/c_quic"
+          },
+          {
+            "type": "link",
+            "label": "C/C++语言HTTP/3接口说明",
+            "href": "/zh/docs/api_reference/c_h3",
+            "docId": "api_reference/c_h3"
+          }
+        ],
+        "href": "/zh/docs/category/api-reference"
+      },
+      {
+        "type": "category",
+        "label": "参与贡献",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "贡献代码",
+            "href": "/zh/docs/how_to_contribute/contribute_codes",
+            "docId": "how_to_contribute/contribute_codes"
+          },
+          {
+            "type": "link",
+            "label": "贡献文档",
+            "href": "/zh/docs/how_to_contribute/contribute_docs",
+            "docId": "how_to_contribute/contribute_docs"
+          },
+          {
+            "type": "link",
+            "label": "开发指南",
+            "href": "/zh/docs/how_to_contribute/development_guides",
+            "docId": "how_to_contribute/development_guides"
+          },
+          {
+            "type": "link",
+            "label": "发布流程",
+            "href": "/zh/docs/how_to_contribute/releasing_process",
+            "docId": "how_to_contribute/releasing_process"
+          }
+        ],
+        "href": "/zh/docs/category/contributing"
+      },
+      {
+        "type": "category",
+        "label": "常见问题",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "安装相关",
+            "href": "/zh/docs/faq/installation",
+            "docId": "faq/installation"
+          },
+          {
+            "type": "link",
+            "label": "使用相关",
+            "href": "/zh/docs/faq/usage",
+            "docId": "faq/usage"
+          },
+          {
+            "type": "link",
+            "label": "性能相关",
+            "href": "/zh/docs/faq/performance",
+            "docId": "faq/performance"
+          },
+          {
+            "type": "link",
+            "label": "问题定位相关",
+            "href": "/zh/docs/faq/trouble_shooting",
+            "docId": "faq/trouble_shooting"
+          },
+          {
+            "type": "link",
+            "label": "开发相关",
+            "href": "/zh/docs/faq/development",
+            "docId": "faq/development"
+          }
+        ],
+        "href": "/zh/docs/category/frequently-asked-questions"
+      },
+      {
+        "type": "category",
+        "label": "延伸阅读",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "类似项目比较",
+            "href": "/zh/docs/further_readings/comparison",
+            "docId": "further_readings/comparison"
+          },
+          {
+            "type": "link",
+            "label": "性能测试",
+            "href": "/zh/docs/further_readings/benchmark",
+            "docId": "further_readings/benchmark"
+          },
+          {
+            "type": "link",
+            "label": "一致性测试",
+            "href": "/zh/docs/further_readings/conformance",
+            "docId": "further_readings/conformance"
+          },
+          {
+            "type": "link",
+            "label": "相关资源",
+            "href": "/zh/docs/further_readings/resources",
+            "docId": "further_readings/resources"
+          }
+        ],
+        "href": "/zh/docs/category/further-readings"
+      }
+    ]
+  },
+  "docs": {
+    "api_reference/c_h3": {
+      "id": "api_reference/c_h3",
+      "title": "C/C++语言HTTP/3接口说明",
+      "description": "准备工作",
+      "sidebar": "tutorialSidebar"
+    },
+    "api_reference/c_quic": {
+      "id": "api_reference/c_quic",
+      "title": "C/C++语言QUIC接口说明",
+      "description": "准备工作",
+      "sidebar": "tutorialSidebar"
+    },
+    "api_reference/rust_h3": {
+      "id": "api_reference/rust_h3",
+      "title": "Rust语言HTTP/3接口说明",
+      "description": "TQUIC的Rust语言接口文档是由cargo自动生成的，可以访问docs.rs查看。",
+      "sidebar": "tutorialSidebar"
+    },
+    "api_reference/rust_quic": {
+      "id": "api_reference/rust_quic",
+      "title": "Rust语言QUIC接口说明",
+      "description": "TQUIC的Rust语言接口文档是由cargo自动生成的，可以访问docs.rs查看。",
+      "sidebar": "tutorialSidebar"
+    },
+    "faq/development": {
+      "id": "faq/development",
+      "title": "开发相关",
+      "description": "代码评审有哪些注意事项?",
+      "sidebar": "tutorialSidebar"
+    },
+    "faq/installation": {
+      "id": "faq/installation",
+      "title": "安装相关",
+      "description": "运行TQUIC自定义构建命令失败?",
+      "sidebar": "tutorialSidebar"
+    },
+    "faq/performance": {
+      "id": "faq/performance",
+      "title": "性能相关",
+      "description": "TQUIC的性能如何?",
+      "sidebar": "tutorialSidebar"
+    },
+    "faq/trouble_shooting": {
+      "id": "faq/trouble_shooting",
+      "title": "问题定位相关",
+      "description": "如何分析加密的QUIC流量?",
+      "sidebar": "tutorialSidebar"
+    },
+    "faq/usage": {
+      "id": "faq/usage",
+      "title": "使用相关",
+      "description": "TQUIC是否支持移动端平台?",
+      "sidebar": "tutorialSidebar"
+    },
+    "further_readings/benchmark": {
+      "id": "further_readings/benchmark",
+      "title": "性能测试",
+      "description": "测试方法",
+      "sidebar": "tutorialSidebar"
+    },
+    "further_readings/comparison": {
+      "id": "further_readings/comparison",
+      "title": "类似项目比较",
+      "description": "业界目前包括很多的QUIC实现。但是，我们只选取了其中部分进行比较。我们选择的依据主要如下:",
+      "sidebar": "tutorialSidebar"
+    },
+    "further_readings/conformance": {
+      "id": "further_readings/conformance",
+      "title": "一致性测试",
+      "description": "我们基于SIGCOMM 2019论文《QUIC的形式化规范和测试》中方法进行协议一致性测试。我们对其形式化规范进行了升级以支持QUIC v1，同时解决了ivy工具链存在的问题。",
+      "sidebar": "tutorialSidebar"
+    },
+    "further_readings/resources": {
+      "id": "further_readings/resources",
+      "title": "相关资源",
+      "description": "协议规范",
+      "sidebar": "tutorialSidebar"
+    },
+    "getting_started/demo": {
+      "id": "getting_started/demo",
+      "title": "示例工具",
+      "description": "请在cargo build命令后添加--all参数来编译示例工具，编译的示例工具位于目录./target/release/。",
+      "sidebar": "tutorialSidebar"
+    },
+    "getting_started/installation": {
+      "id": "getting_started/installation",
+      "title": "安装",
+      "description": "支持平台",
+      "sidebar": "tutorialSidebar"
+    },
+    "getting_started/next": {
+      "id": "getting_started/next",
+      "title": "下一步",
+      "description": "如果你希望集成 TQUIC 协议库，请参考Tutorial和API参考说明。",
+      "sidebar": "tutorialSidebar"
+    },
+    "how_to_contribute/contribute_codes": {
+      "id": "how_to_contribute/contribute_codes",
+      "title": "贡献代码",
+      "description": "本文目的在于指导你如何在本地开发TQUIC，并将修改提交到官方TQUIC代码库。",
+      "sidebar": "tutorialSidebar"
+    },
+    "how_to_contribute/contribute_docs": {
+      "id": "how_to_contribute/contribute_docs",
+      "title": "贡献文档",
+      "description": "TQUIC文档主要分为以下几类别：",
+      "sidebar": "tutorialSidebar"
+    },
+    "how_to_contribute/development_guides": {
+      "id": "how_to_contribute/development_guides",
+      "title": "开发指南",
+      "description": "项目顶级目录结构",
+      "sidebar": "tutorialSidebar"
+    },
+    "how_to_contribute/releasing_process": {
+      "id": "how_to_contribute/releasing_process",
+      "title": "发布流程",
+      "description": "TQUIC的开发遵循git-flow分支模型，并遵循语义版本。",
+      "sidebar": "tutorialSidebar"
+    },
+    "intro": {
+      "id": "intro",
+      "title": "介绍",
+      "description": "什么是QUIC",
+      "sidebar": "tutorialSidebar"
+    },
+    "tutorial/c": {
+      "id": "tutorial/c",
+      "title": "使用C语言接口",
+      "description": "本文介绍应用程序如何使用C语言的TQUIC接口。",
+      "sidebar": "tutorialSidebar"
+    },
+    "tutorial/core_concepts": {
+      "id": "tutorial/core_concepts",
+      "title": "核心概念",
+      "description": "TQUIC接口涉及的常用概念术语描述如下。",
+      "sidebar": "tutorialSidebar"
+    },
+    "tutorial/rust": {
+      "id": "tutorial/rust",
+      "title": "使用Rust语言接口",
+      "description": "本文介绍应用程序如何使用RUST语言的TQUIC接口。",
+      "sidebar": "tutorialSidebar"
+    }
+  }
+}
