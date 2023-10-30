@@ -2,18 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-test-site.com/zh/blog</id>
     <title>TQUIC Blog</title>
-    <updated>2023-10-26T00:00:00.000Z</updated>
+    <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-test-site.com/zh/blog"/>
     <subtitle>TQUIC Blog</subtitle>
     <icon>https://your-docusaurus-test-site.com/zh/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[TQUIC正式开源]]></title>
-        <id>https://your-docusaurus-test-site.com/zh/blog/TQUIC正式开源</id>
-        <link href="https://your-docusaurus-test-site.com/zh/blog/TQUIC正式开源"/>
-        <updated>2023-10-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[TQUIC是基于RUST语言开发的QUIC协议库，目标是打造一个具有持续技术影响力，高性能、快传输、高质量的传输协议库。]]></summary>
-        <content type="html"><![CDATA[<p>TQUIC是基于RUST语言开发的QUIC协议库，目标是打造一个具有持续技术影响力，高性能、快传输、高质量的传输协议库。</p><h1>开源缘起</h1><p>QUIC是一种新的通用、安全、多路复用的传输层协议，提供了大量增强功能并旨在最终取代TCP，从而推动互联网传输继续发展并解决困扰互联网的许多问题。</p><p>随着QUIC被选为HTTP/3的底层传输协议，预计QUIC协议将占据更大的互联网流量份额，并持续使用至少30年以上。</p><p>由于QUIC所具备的广泛性、长期性、创新性特点，我们开源了自研的TQUIC协议库，希望能借TQUIC开源的机会, 与各位同行切磋技术，促进传输层技术的发展。</p><h1>特性和优势</h1><p>TQUIC协议库具有如下的优势：</p><p><strong>快传输</strong>：TQUIC是业界支持拥塞控制算法最丰富的协议库，在全部场景下表现符合RFC预期，在弱网和部分场景下传输效果领先2%-30%。</p><p><strong>高性能</strong>：TQUIC在大部分测试场景下的单机处理性能优于同类开源产品5%，部分场景下单机处理性能领先20%。</p><p><strong>高质量</strong>：QUIC 协议栈涵盖10+篇核心的RFC标准或草案，同时涉及到传输层、安全层、应用层，复杂度远大于TCP。TQUIC单元测试覆盖率95%以上，与业界四个主流 QUIC实现的互操性测试用例通过率为100%， 同时采用基于形式化规范(SIGCOMM2019论文成果）的测试方法，严格保障了协议一致性。</p><p><strong>易用性</strong>：TQUIC易于使用，支持灵活的配置和丰富的可观察性；TQUIC提供了Rust/C/C++多语言接口，未来计划进一步提供Kotlin/Swift等语言接口。</p><p><strong>基于RUST</strong>：TQUIC基于内存安全语言编写，不受缓冲区溢出漏洞和其他与内存相关缺陷影响。</p><p><strong>丰富特性</strong>： TQUIC支持所有QUIC和HTTP/3规范的重要特性。</p><p>关于TQUIC的详细介绍可以查看TQUIC项目网站 <a href="https://tquic.net/zh/docs/intro" target="_blank" rel="noopener noreferrer">https://tquic.net/zh/docs/intro</a> 。</p><h1>后续规划</h1><ul><li>对接开源技术生态，扩大TQUIC使用场景，进一步提升TQUIC使用体验。</li><li>发表相关论文，并逐步开源更多TQUIC高级特性和算法。</li><li>追踪QUIC协议的演进和创新，并持续提升TQUIC核心能力。</li></ul><h1>结语</h1><p>TQUIC的开源只是开始。期待得到大家的指正，并能参与进来，共同建设网络传输领域的技术生态。欢迎有兴趣的同学和我们联系。</p><p><strong>TQUIC开源项目网站</strong>：<a href="https://tquic.net" target="_blank" rel="noopener noreferrer">https://tquic.net</a></p><p><strong>TQUIC开源项目地址</strong>：<a href="https://github.com/tencent/tquic" target="_blank" rel="noopener noreferrer">https://github.com/tencent/tquic</a></p>]]></content>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>https://your-docusaurus-test-site.com/zh/blog/welcome</id>
+        <link href="https://your-docusaurus-test-site.com/zh/blog/welcome"/>
+        <updated>2021-08-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[TBD]]></summary>
+        <content type="html"><![CDATA[<p>TBD</p>]]></content>
         <author>
             <name>Sijie Yang</name>
             <uri>https://github.com/iyangsj</uri>
@@ -21,6 +21,5 @@
         <category label="tquic" term="tquic"/>
         <category label="quic" term="quic"/>
         <category label="rust" term="rust"/>
-        <category label="open source" term="open source"/>
     </entry>
 </feed>
