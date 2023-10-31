@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktquic_website=self.webpackChunktquic_website||[]).push([[7690],{9010:s=>{s.exports=JSON.parse('{"label":"rust","permalink":"/blog/tags/rust","allTagsPath":"/blog/tags","count":1}')}}]);
