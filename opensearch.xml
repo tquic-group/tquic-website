@@ -4,8 +4,8 @@
   <ShortName>TQUIC</ShortName>
   <Description>Search TQUIC</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://your-docusaurus-test-site.com/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://your-docusaurus-test-site.com/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://your-docusaurus-test-site.com/opensearch.xml" />
+  <Image width="16" height="16" type="image/x-icon">https://tquic.net/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://tquic.net/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://tquic.net/opensearch.xml" />
   <moz:SearchForm>https://your-docusaurus-test-site.com/</moz:SearchForm>
 </OpenSearchDescription>
