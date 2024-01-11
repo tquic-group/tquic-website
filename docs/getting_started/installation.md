@@ -148,11 +148,11 @@ cargo test
 
 ## Further readings
 
-* [How to use the demo client and demo server](./demo)
-* [How to use the API of TQUIC](../category/tutorial)
+* [How to use the demo client and demo server](./demo/)
+* [How to use the API of TQUIC](../category/tutorial/)
 
 
 ## Problems?
 
-* Please refer to the [documentation for common installation issues](../faq/installation) first.
+* Please refer to the [documentation for common installation issues](../faq/installation/) first.
 * Ask for help on our [GitHub issues](https://github.com/tencent/tquic/issues).

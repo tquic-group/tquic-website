@@ -14,5 +14,5 @@ The complete example code for this article can be found in the [TQUIC C example]
 
 The TQUIC C API is functionally equivalent to the TQUIC RUST API, except programming language details.
 
-* To begin working with the TQUIC C API, we recommend referring to the "[Core Concepts](core_concepts.md)" section, which covers important concepts related to its usage.
-* Additionally, detailed guidance on using the API can be found in the ["Using the Rust API"](rust.md) section.
+* To begin working with the TQUIC C API, we recommend referring to the "[Core Concepts](./core_concepts/)" section, which covers important concepts related to its usage.
+* Additionally, detailed guidance on using the API can be found in the ["Using the Rust API"](./rust/) section.

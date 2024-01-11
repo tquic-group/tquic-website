@@ -33,7 +33,7 @@ TQUIC is an implementation of the IETF QUIC protocol. It is a high-performance, 
 TQUIC supports all big features conforming with [QUIC, HTTP/3 RFCs](https://quicwg.org/).
 
 * **High performance**:
-TQUIC is designed for high performance and low latency. Relevant details can be found in the [benchmark result](further_readings/benchmark).
+TQUIC is designed for high performance and low latency. Relevant details can be found in the [benchmark result](further_readings/benchmark/).
 
 * **Pluggable congestion control**:
 TQUIC supports various congestion control algorithms, including [CUBIC](https://datatracker.ietf.org/doc/html/rfc8312), [BBR](https://dl.acm.org/doi/pdf/10.1145/3009824), [BBRv3](https://datatracker.ietf.org/meeting/117/materials/slides-117-ccwg-bbrv3-algorithm-bug-fixes-and-public-internet-deployment-00), and [COPA](https://www.usenix.org/conference/nsdi18/presentation/arun).
@@ -45,7 +45,7 @@ TQUIC supports [Multipath](https://datatracker.ietf.org/doc/html/draft-ietf-quic
 TQUIC is easy to use. It supports flexible settings and detailed observability.
 
 * **Cross platform**:
-TQUIC runs on almost anything to which Rust compiles. It provides [APIs for Rust/C/C++](category/api-reference).
+TQUIC runs on almost anything to which Rust compiles. It provides [APIs for Rust/C/C++](category/api-reference/).
 
 * **Powered by Rust**:
 TQUIC is written in a memory safety language and immune to Buffer Overflow vulnerability and other memory-related bugs.
@@ -54,7 +54,7 @@ TQUIC is written in a memory safety language and immune to Buffer Overflow vulne
 Extensive automated testing, including unit testing, fuzz testing, integration testing, performance benchmarking, interoperability testing, and more.
 
 * **Protocol Compliance**:
-TQUIC has been [verified by formal specification using the Ivy tool](further_readings/conformance). It has also passed [IETF interoperability tests](https://github.com/marten-seemann/quic-interop-runner).
+TQUIC has been [verified by formal specification using the Ivy tool](further_readings/conformance/). It has also passed [IETF interoperability tests](https://github.com/marten-seemann/quic-interop-runner).
 
 
 :::note

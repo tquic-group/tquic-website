@@ -15,7 +15,7 @@ sidebar_position: 1
 
 - 请遵守Rust编程语言代码风格规范。
 - 所有代码都需要单元测试。所有单元测试都应通过。
-- 请参考[代码合入规范](contribute_codes#github-pull-request%E6%8C%87%E5%8D%97)。
+- 请参考[代码合入规范](contribute_codes/#github-pull-request%E6%8C%87%E5%8D%97)。
   
 
 ### [派生代码库](https://help.github.com/articles/fork-a-repo/)
@@ -34,7 +34,7 @@ $ cd tquic
 
 ### 创建本地分支
 
-TQUIC项目采用了[Git分支模型](http://nvie.com/posts/a-successful-git-branching-model/)，用于TQUIC的开发、测试、发布和维护。详情请参考[TQUIC分支规范](releasing_process.md).
+TQUIC项目采用了[Git分支模型](http://nvie.com/posts/a-successful-git-branching-model/)，用于TQUIC的开发、测试、发布和维护。详情请参考[TQUIC分支规范](releasing_process/).
 
 对于新特性和问题修复，应该从`develop` 分支创建出单独的分支，在新的分支上完成开发。
 
@@ -62,7 +62,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ### 编译及测试
 
-关于编译和测试，请参考[安装](../getting_started/installation)章节。 
+关于编译和测试，请参考[安装](../getting_started/installation/)章节。 
 
 
 ### 提交代码
@@ -146,7 +146,7 @@ $ git push origin my-cool-stuff
 
 ### 通过单元测试
 
-Pull Request中每一次新的提交都会触发持续集成单元测试，因此请确保在提交消息中包含必要的注释。请参考[commit](contribute_codes.md#%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81)章节。 
+Pull Request中每一次新的提交都会触发持续集成单元测试，因此请确保在提交消息中包含必要的注释。请参考[commit](contribute_codes/#%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81)章节。 
 
 请注意Pull Request中的持续集成单元测试，会执行几分钟才完成。
 

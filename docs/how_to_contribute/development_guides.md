@@ -18,7 +18,6 @@ The top directories are as followings:
 | fuzz/      | Fuzzing tests |
 | interop/   | Interoperability testing |
 | include/   | Generated header files for C/C++ |
-| website/   | TQUIC website for documents |
 
 :::tip
 The header file `include/tquic.h` should be updated if any changes are made to the `src/ffi.rs`.
@@ -92,7 +91,7 @@ Refer to the [cargo-fuzz documentation](https://rust-fuzz.github.io/book/cargo-f
 
 We maintaine a formal specification of the [QUIC v1](https://datatracker.ietf.org/doc/html/rfc9000) protocol using the [Ivy language](http://microsoft.github.io/ivy/). This specification can be used to test implementations of QUIC using [compositional specification-based testing methods](https://dl.acm.org/doi/10.1145/3341302.3342087).
 
-For further information, kindly consult [this document](../further_readings/conformance).
+For further information, kindly consult [this document](../further_readings/conformance/).
 
 
 ## Interoperability testing

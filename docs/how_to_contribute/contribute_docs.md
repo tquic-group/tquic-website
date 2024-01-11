@@ -31,8 +31,8 @@ $ sudo apt-get update && apt-get install -y npm
 First download the full repository:
 
 ```bash
-$ git clone https://github.com/tencent/tquic
-$ cd tquic/website
+$ git clone https://github.com/tquic-group/tquic-website.git
+$ cd tquic-website
 $ npm install
 ```
 
@@ -94,5 +94,5 @@ On the page to be updated, click Refresh Content in the top right corner.
 
 ## Pull Request for your changes
 
-The process of submitting changes and PR can be found in [How to contribute code](./contribute_codes#guide-of-submitting-pr-to-github)
+The process of submitting changes and PR can be found in [How to contribute code](./contribute_codes/#guide-of-submitting-pr-to-github)
 

@@ -31,7 +31,7 @@ TQUIC是IETF QUIC协议的实现。它是一个高性能、轻量级、跨平台
 
 * **丰富的功能**：TQUIC 支持所有[QUIC、HTTP/3规范](https://quicwg.org/)中的重大功能。
 
-* **高性能**：TQUIC是为高性能和低延迟而设计的。相关细节可以参考[基准测试结果](further_readings/benchmark)。
+* **高性能**：TQUIC是为高性能和低延迟而设计的。相关细节可以参考[基准测试结果](further_readings/benchmark/)。
 
 * **可插拔拥塞控制**：TQUIC支持多种拥塞控制算法，包括[CUBIC](https://datatracker.ietf.org/doc/html/rfc8312)，[BBR](https://dl.acm.org/doi/pdf/10.1145/3009824)，[BBRv3](https://datatracker.ietf.org/meeting/117/materials/slides-117-ccwg-bbrv3-algorithm-bug-fixes-and-public-internet-deployment-00)，[COPA](https://www.usenix.org/conference/nsdi18/presentation/arun)。
 
@@ -39,13 +39,13 @@ TQUIC是IETF QUIC协议的实现。它是一个高性能、轻量级、跨平台
 
 * **易用性**：TQUIC提供易用的接口，支持灵活的配置参数，提供丰富的可观测性。
 
-* **跨平台**：TQUIC可运行在Rust语言支持的各种平台，同时提供了[Rust/C/C++语言接口](category/api-reference)。
+* **跨平台**：TQUIC可运行在Rust语言支持的各种平台，同时提供了[Rust/C/C++语言接口](category/api-reference/)。
 
 * **基于Rust**：TQUIC基于用内存安全语言编写，可避免缓冲区溢出漏洞和其他内存相关错误的影响。
 
 * **高质量**：TQUIC包括充分的自动化测试，包括单元测试、模糊测试、集成测试、性能基准测试、互操作性测试等。
 
-* **协议一致性**：TQUIC已通过[基于Ivy的形式化规范验证](further_readings/conformance)。同时通过了IETF互操作性测试。
+* **协议一致性**：TQUIC已通过[基于Ivy的形式化规范验证](further_readings/conformance/)。同时通过了IETF互操作性测试。
 
 :::note
 一些高级特性将在随后版本中逐步开源，详见[版本记录](https://github.com/tencent/tquic/releases)。

@@ -40,7 +40,7 @@ The NGINX-QUIC codebase, despite having the fewest lines of code, currently lack
 | Multipath | Not supported | Not supported | Not supported | Not supported | Support Multipath QUIC |
 
 
-The performance of TQUIC surpasses that of the other implementations significantly. For further details on the benchmark methodology and results, please refer to the [benchmark report](benchmark.md).
+The performance of TQUIC surpasses that of the other implementations significantly. For further details on the benchmark methodology and results, please refer to the [benchmark report](./benchmark/).
 
 Popular congestion control algorithms are supported by all these implementations, except for NGINX-QUIC.
 

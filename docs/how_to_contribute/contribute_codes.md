@@ -16,7 +16,7 @@ The guidelines in this section will help you develop TQUIC in a local environmen
 
 - Please refer to the coding format of Rust language.
 - Unit test is needed for all codes. All unit tests should be passed.
-- Please follow [regulations of submitting codes](contribute_codes#guide-of-submitting-pull-request-to-github).
+- Please follow [regulations of submitting codes](contribute_codes/#guide-of-submitting-pull-request-to-github).
   
 
 ### [Fork](https://help.github.com/articles/fork-a-repo/)
@@ -34,7 +34,7 @@ $ cd tquic
 
 ### Create local branch
 
-The [Git stream branch model](http://nvie.com/posts/a-successful-git-branching-model/) is currently applied to TQUIC for the purposes of development, testing, release and maintenance. For more details, please refer to [branch regulation of TQUIC](releasing_process.md).
+The [Git stream branch model](http://nvie.com/posts/a-successful-git-branching-model/) is currently applied to TQUIC for the purposes of development, testing, release and maintenance. For more details, please refer to [branch regulation of TQUIC](./releasing_process/).
 
 The development tasks for new features and bug fixes should be completed in a separate branch that branches off from the `develop` branch.
 
@@ -62,7 +62,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ### Build and test
 
-Please refer to [Installation](../getting_started/installation) about construction and test.
+Please refer to [Installation](../getting_started/installation/) about construction and test.
 
 
 ### Commit
@@ -146,7 +146,7 @@ Please wait for the review. If any modifications are necessary, you can update t
 
 ### Pass unit tests
 
-Every new commit in your Pull Request will trigger CI unit tests, so please ensure that necessary comments have been included in your commit message. Please refer to [commit](contribute_codes.md#commit).
+Every new commit in your Pull Request will trigger CI unit tests, so please ensure that necessary comments have been included in your commit message. Please refer to [commit](./contribute_codes/#commit).
 
 Please note the procedure of CI unit tests in your Pull Request which will be finished in several minutes.
 

@@ -6,7 +6,7 @@ sidebar_position: 5
 # 开发相关
 
 ## 代码评审有哪些注意事项?
-请参见[如何贡献代码](../how_to_contribute/contribute_codes#certain-regulations-about-code-review)。
+请参见[如何贡献代码](../how_to_contribute/contribute_codes/#certain-regulations-about-code-review)。
 
 
 ## 如何测试TQUIC?

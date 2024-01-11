@@ -148,11 +148,11 @@ cargo test
 
 ## 进一步了解
 
-* [如何使用示例客户端/服务端工具](./demo)
-* [如何使用TQUIC API](../category/tutorial)
+* [如何使用示例客户端/服务端工具](./demo/)
+* [如何使用TQUIC API](../category/tutorial/)
 
 
 ## 遇到问题?
 
-* 请参考[常见安装问题](../faq/installation) 。
+* 请参考[常见安装问题](../faq/installation/) 。
 * 您可以在[GitHub issues](https://github.com/tencent/tquic/issues)提问寻求帮助。

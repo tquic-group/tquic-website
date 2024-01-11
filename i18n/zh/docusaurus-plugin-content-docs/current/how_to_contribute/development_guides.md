@@ -18,7 +18,6 @@ TQUIC项目的顶级目录如下:
 | fuzz/      | 模糊测试 |
 | interop/   | 互操作性测试 |
 | include/   | 自动生成的C/C++头文件 |
-| website/   | TQUIC文档网站 |
 
 :::tip
 如果对`src/ffi.rs`进行了修改，应该更新头文件 `include/tquic.h`。
@@ -94,7 +93,7 @@ cargo fuzz run <target_name> -- -max_total_time=30
 
 我们使用[Ivy语言](http://microsoft.github.io/ivy/)定义了[QUIC v1](https://datatracker.ietf.org/doc/html/rfc9000)协议的形式化规范。基于该规范，使用[基于组合规范的测试方法](https://dl.acm.org/doi/10.1145/3341302.3342087)可以测试QUIC实现的一致性。
 
-欲了解更多信息，请参阅[文档](../further_readings/conformance)。
+欲了解更多信息，请参阅[文档](../further_readings/conformance/)。
 
 
 ## 互操作性测试

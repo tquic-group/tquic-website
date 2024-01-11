@@ -31,8 +31,8 @@ $ sudo apt-get update && apt-get install -y npm
 首先下载完整的代码库：
 
 ```bash
-$ git clone https://github.com/tencent/tquic
-$ cd tquic/website
+$ git clone https://github.com/tquic-group/tquic-website.git
+$ cd tquic-website
 $ npm install
 ```
 
@@ -94,5 +94,5 @@ $ python3 -m http.server 8000
 
 ## 发起合入申请
 
-提交修改及发起Pull Request的流程参见[贡献代码](./contribute_codes#guide-of-submitting-pr-to-github)
+提交修改及发起Pull Request的流程参见[贡献代码](./contribute_codes/#guide-of-submitting-pr-to-github)
 
