@@ -1,50 +1,58 @@
-# TQUIC
+# TQUIC Website
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://github.com/Tencent/tquic/blob/develop/LICENSE)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/tencent/tquic/rust.yml)](https://github.com/Tencent/tquic/actions/workflows/rust.yml)
-[![codecov](https://codecov.io/gh/tencent/tquic/graph/badge.svg)](https://codecov.io/gh/tencent/tquic)
-[![docs.rs](https://docs.rs/tquic/badge.svg)](https://docs.rs/tquic)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Ftquic.net&up_message=tquic.net)](https://tquic.net)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/8010/badge)](https://www.bestpractices.dev/projects/8010)
 
-English | [中文](README-CN.md)
 
 TQUIC is a high-performance, lightweight, and cross-platform library for the [IETF QUIC](https://datatracker.ietf.org/wg/quic/about/) protocol. 
 
-
-## Advantages
-
-* **High performance**: TQUIC is designed for high performance and low latency. Relevant details can be found in the [benchmark result](https://tquic.net/docs/further_readings/benchmark).
-
-* **Pluggable congestion control**: TQUIC supports various congestion control algorithms, including CUBIC, BBR, BBRv3, and COPA.
-
-* **Multipath QUIC**: TQUIC supports Multipath to enable the simultaneous usage of multiple paths for a single connection.
-
-* **Easy to Use**: TQUIC is easy to use. It supports flexible settings and detailed observability.
-
-* **Cross platform**: TQUIC runs on almost anything to which Rust compiles. It provides APIs for Rust/C/C++.
-
-* **Powered by Rust**: TQUIC is written in a memory safety language and immune to Buffer Overflow vulnerability and other memory-related bugs.
-
-* **High quality**: Extensive automated testing, including unit testing, fuzz testing, integration testing, performance benchmarking, interoperability testing, and more.
-
-* **Protocol Compliance**: TQUIC has been verified by formal specification using the Ivy tool. It has also passed IETF interoperability tests.
-
-* **Rich features**: TQUIC supports all big features conforming with QUIC, HTTP/3 RFCs.
-
-
-## Getting Started
-- [Build and run](https://tquic.net/docs/getting_started/installation)
-
-
-## Running the tests
-- See [Build and run](https://tquic.net/docs/getting_started/installation)
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 
 ## Documentation
 
 - [English version](https://tquic.net/docs/intro)
 - [Chinese version](https://tquic.net/zh/docs/intro)
+
+
+### Installation
+
+```
+$ yarn
+```
+
+### Local Development
+
+```
+$ yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
 
 ## Contributing
