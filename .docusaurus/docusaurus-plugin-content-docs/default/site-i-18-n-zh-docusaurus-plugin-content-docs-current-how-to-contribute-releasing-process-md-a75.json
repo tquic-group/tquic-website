@@ -1,0 +1,31 @@
+{
+  "unversionedId": "how_to_contribute/releasing_process",
+  "id": "how_to_contribute/releasing_process",
+  "title": "发布流程",
+  "description": "TQUIC的开发遵循git-flow分支模型，并遵循语义版本。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/how_to_contribute/releasing_process.md",
+  "sourceDirName": "how_to_contribute",
+  "slug": "/how_to_contribute/releasing_process",
+  "permalink": "/zh/docs/how_to_contribute/releasing_process",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/how_to_contribute/releasing_process.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "2024年1月11日",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "发布流程",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "开发指南",
+    "permalink": "/zh/docs/how_to_contribute/development_guides"
+  },
+  "next": {
+    "title": "Frequently Asked Questions",
+    "permalink": "/zh/docs/category/frequently-asked-questions"
+  }
+}

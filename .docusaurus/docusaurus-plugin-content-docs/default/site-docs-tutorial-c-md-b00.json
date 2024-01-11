@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorial/c",
+  "id": "tutorial/c",
+  "title": "Using the C API",
+  "description": "This tutorial describes how to use the TQUIC C API.",
+  "source": "@site/docs/tutorial/c.md",
+  "sourceDirName": "tutorial",
+  "slug": "/tutorial/c",
+  "permalink": "/docs/tutorial/c",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial/c.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "Jan 11, 2024",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Using the C API",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Using the Rust API",
+    "permalink": "/docs/tutorial/rust"
+  },
+  "next": {
+    "title": "API Reference",
+    "permalink": "/docs/category/api-reference"
+  }
+}

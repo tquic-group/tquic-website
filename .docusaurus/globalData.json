@@ -1,0 +1,178 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/zh/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/zh/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "api_reference/c_h3",
+              "path": "/zh/docs/api_reference/c_h3",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api_reference/c_quic",
+              "path": "/zh/docs/api_reference/c_quic",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api_reference/rust_h3",
+              "path": "/zh/docs/api_reference/rust_h3",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api_reference/rust_quic",
+              "path": "/zh/docs/api_reference/rust_quic",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "faq/development",
+              "path": "/zh/docs/faq/development",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "faq/installation",
+              "path": "/zh/docs/faq/installation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "faq/performance",
+              "path": "/zh/docs/faq/performance",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "faq/trouble_shooting",
+              "path": "/zh/docs/faq/trouble_shooting",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "faq/usage",
+              "path": "/zh/docs/faq/usage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "further_readings/benchmark",
+              "path": "/zh/docs/further_readings/benchmark",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "further_readings/comparison",
+              "path": "/zh/docs/further_readings/comparison",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "further_readings/conformance",
+              "path": "/zh/docs/further_readings/conformance",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "further_readings/resources",
+              "path": "/zh/docs/further_readings/resources",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting_started/demo",
+              "path": "/zh/docs/getting_started/demo",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting_started/installation",
+              "path": "/zh/docs/getting_started/installation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting_started/next",
+              "path": "/zh/docs/getting_started/next",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "how_to_contribute/contribute_codes",
+              "path": "/zh/docs/how_to_contribute/contribute_codes",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "how_to_contribute/contribute_docs",
+              "path": "/zh/docs/how_to_contribute/contribute_docs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "how_to_contribute/development_guides",
+              "path": "/zh/docs/how_to_contribute/development_guides",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "how_to_contribute/releasing_process",
+              "path": "/zh/docs/how_to_contribute/releasing_process",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/zh/docs/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial/c",
+              "path": "/zh/docs/tutorial/c",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial/core_concepts",
+              "path": "/zh/docs/tutorial/core_concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial/rust",
+              "path": "/zh/docs/tutorial/rust",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/getting-started",
+              "path": "/zh/docs/category/getting-started",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/tutorial",
+              "path": "/zh/docs/category/tutorial",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/api-reference",
+              "path": "/zh/docs/category/api-reference",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/contributing",
+              "path": "/zh/docs/category/contributing",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/frequently-asked-questions",
+              "path": "/zh/docs/category/frequently-asked-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/further-readings",
+              "path": "/zh/docs/category/further-readings",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/zh/docs/intro",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

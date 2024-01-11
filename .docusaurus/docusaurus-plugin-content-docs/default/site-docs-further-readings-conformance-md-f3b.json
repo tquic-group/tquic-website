@@ -1,0 +1,31 @@
+{
+  "unversionedId": "further_readings/conformance",
+  "id": "further_readings/conformance",
+  "title": "Conformance",
+  "description": "We perform protocol conformance tests based on the methodology introduced in a paper titled \"Formal specification and testing of QUIC\" published at SIGCOMM 2019. We have upgraded the initial formal specification to incorporate support for QUIC v1 and resolved some issues in the ivy toolchain.",
+  "source": "@site/docs/further_readings/conformance.md",
+  "sourceDirName": "further_readings",
+  "slug": "/further_readings/conformance",
+  "permalink": "/docs/further_readings/conformance",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/further_readings/conformance.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "Jan 11, 2024",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Conformance",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Benchmark",
+    "permalink": "/docs/further_readings/benchmark"
+  },
+  "next": {
+    "title": "Resources",
+    "permalink": "/docs/further_readings/resources"
+  }
+}

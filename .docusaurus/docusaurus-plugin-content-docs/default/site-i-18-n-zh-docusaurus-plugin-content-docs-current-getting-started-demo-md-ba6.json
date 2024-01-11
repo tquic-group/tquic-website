@@ -1,0 +1,31 @@
+{
+  "unversionedId": "getting_started/demo",
+  "id": "getting_started/demo",
+  "title": "示例工具",
+  "description": "请在cargo build命令后添加--all参数来编译示例工具，编译的示例工具位于目录./target/release/。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/getting_started/demo.md",
+  "sourceDirName": "getting_started",
+  "slug": "/getting_started/demo",
+  "permalink": "/zh/docs/getting_started/demo",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/getting_started/demo.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "2024年1月11日",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "示例工具",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "安装",
+    "permalink": "/zh/docs/getting_started/installation"
+  },
+  "next": {
+    "title": "下一步",
+    "permalink": "/zh/docs/getting_started/next"
+  }
+}

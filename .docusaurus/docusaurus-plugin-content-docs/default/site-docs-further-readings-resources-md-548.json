@@ -1,0 +1,27 @@
+{
+  "unversionedId": "further_readings/resources",
+  "id": "further_readings/resources",
+  "title": "Resources",
+  "description": "Specifications",
+  "source": "@site/docs/further_readings/resources.md",
+  "sourceDirName": "further_readings",
+  "slug": "/further_readings/resources",
+  "permalink": "/docs/further_readings/resources",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/further_readings/resources.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "Jan 11, 2024",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Resources",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Conformance",
+    "permalink": "/docs/further_readings/conformance"
+  }
+}

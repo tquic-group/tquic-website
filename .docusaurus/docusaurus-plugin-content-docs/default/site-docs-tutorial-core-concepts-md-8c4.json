@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorial/core_concepts",
+  "id": "tutorial/core_concepts",
+  "title": "Core concepts",
+  "description": "Commonly used terms in the TQUIC APIs are described below.",
+  "source": "@site/docs/tutorial/core_concepts.md",
+  "sourceDirName": "tutorial",
+  "slug": "/tutorial/core_concepts",
+  "permalink": "/docs/tutorial/core_concepts",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial/core_concepts.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "Jan 11, 2024",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Core concepts",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tutorial",
+    "permalink": "/docs/category/tutorial"
+  },
+  "next": {
+    "title": "Using the Rust API",
+    "permalink": "/docs/tutorial/rust"
+  }
+}

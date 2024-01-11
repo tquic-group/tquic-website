@@ -1,0 +1,31 @@
+{
+  "unversionedId": "getting_started/demo",
+  "id": "getting_started/demo",
+  "title": "Example tools",
+  "description": "The example tools are built by adding an option --all to the cargo build command. They are generated and saved in the directory ./target/release/.",
+  "source": "@site/docs/getting_started/demo.md",
+  "sourceDirName": "getting_started",
+  "slug": "/getting_started/demo",
+  "permalink": "/docs/getting_started/demo",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/getting_started/demo.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "Jan 11, 2024",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Example tools",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/docs/getting_started/installation"
+  },
+  "next": {
+    "title": "Next step",
+    "permalink": "/docs/getting_started/next"
+  }
+}

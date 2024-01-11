@@ -1,0 +1,16 @@
+{
+  "title": "接口文档",
+  "description": "TQUIC协议库API参考说明文档",
+  "slug": "/category/api-reference",
+  "permalink": "/zh/docs/category/api-reference",
+  "navigation": {
+    "previous": {
+      "title": "使用C语言接口",
+      "permalink": "/zh/docs/tutorial/c"
+    },
+    "next": {
+      "title": "Rust语言QUIC接口说明",
+      "permalink": "/zh/docs/api_reference/rust_quic"
+    }
+  }
+}

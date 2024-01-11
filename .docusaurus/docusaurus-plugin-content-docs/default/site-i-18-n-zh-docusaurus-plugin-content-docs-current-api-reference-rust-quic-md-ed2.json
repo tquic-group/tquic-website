@@ -1,0 +1,31 @@
+{
+  "unversionedId": "api_reference/rust_quic",
+  "id": "api_reference/rust_quic",
+  "title": "Rust语言QUIC接口说明",
+  "description": "TQUIC的Rust语言接口文档是由cargo自动生成的，可以访问docs.rs查看。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/api_reference/rust_quic.md",
+  "sourceDirName": "api_reference",
+  "slug": "/api_reference/rust_quic",
+  "permalink": "/zh/docs/api_reference/rust_quic",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/api_reference/rust_quic.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "2024年1月11日",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Rust语言QUIC接口说明",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "API Reference",
+    "permalink": "/zh/docs/category/api-reference"
+  },
+  "next": {
+    "title": "Rust语言HTTP/3接口说明",
+    "permalink": "/zh/docs/api_reference/rust_h3"
+  }
+}

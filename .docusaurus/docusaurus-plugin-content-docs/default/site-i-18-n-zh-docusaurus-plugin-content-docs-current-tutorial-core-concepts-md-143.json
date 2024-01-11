@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorial/core_concepts",
+  "id": "tutorial/core_concepts",
+  "title": "核心概念",
+  "description": "TQUIC接口涉及的常用概念术语描述如下。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/tutorial/core_concepts.md",
+  "sourceDirName": "tutorial",
+  "slug": "/tutorial/core_concepts",
+  "permalink": "/zh/docs/tutorial/core_concepts",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial/core_concepts.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "2024年1月11日",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "核心概念",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tutorial",
+    "permalink": "/zh/docs/category/tutorial"
+  },
+  "next": {
+    "title": "使用Rust语言接口",
+    "permalink": "/zh/docs/tutorial/rust"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "unversionedId": "further_readings/conformance",
+  "id": "further_readings/conformance",
+  "title": "一致性测试",
+  "description": "我们基于SIGCOMM 2019论文《QUIC的形式化规范和测试》中方法进行协议一致性测试。我们对其形式化规范进行了升级以支持QUIC v1，同时解决了ivy工具链存在的问题。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/further_readings/conformance.md",
+  "sourceDirName": "further_readings",
+  "slug": "/further_readings/conformance",
+  "permalink": "/zh/docs/further_readings/conformance",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/further_readings/conformance.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "2024年1月11日",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "一致性测试",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "性能测试",
+    "permalink": "/zh/docs/further_readings/benchmark"
+  },
+  "next": {
+    "title": "相关资源",
+    "permalink": "/zh/docs/further_readings/resources"
+  }
+}

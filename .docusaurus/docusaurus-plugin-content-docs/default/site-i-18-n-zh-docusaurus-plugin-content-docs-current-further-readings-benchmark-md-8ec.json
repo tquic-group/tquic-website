@@ -1,0 +1,31 @@
+{
+  "unversionedId": "further_readings/benchmark",
+  "id": "further_readings/benchmark",
+  "title": "性能测试",
+  "description": "测试方法",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/further_readings/benchmark.md",
+  "sourceDirName": "further_readings",
+  "slug": "/further_readings/benchmark",
+  "permalink": "/zh/docs/further_readings/benchmark",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/further_readings/benchmark.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "2024年1月11日",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "性能测试",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "类似项目比较",
+    "permalink": "/zh/docs/further_readings/comparison"
+  },
+  "next": {
+    "title": "一致性测试",
+    "permalink": "/zh/docs/further_readings/conformance"
+  }
+}

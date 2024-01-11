@@ -1,0 +1,50 @@
+{
+  "permalink": "/blog/tquic-open-source",
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/blog/2023-10-26-open-source/index.md",
+  "source": "@site/blog/2023-10-26-open-source/index.md",
+  "title": "Announcing the TQUIC open source project",
+  "description": "TQUIC is a QUIC protocol implementation written in the Rust language, aiming to create a low-overhead, high-throughput, and high-quality transport protocol library with continuous technological influence.",
+  "date": "2023-10-26T00:00:00.000Z",
+  "formattedDate": "October 26, 2023",
+  "tags": [
+    {
+      "label": "tquic",
+      "permalink": "/blog/tags/tquic"
+    },
+    {
+      "label": "quic",
+      "permalink": "/blog/tags/quic"
+    },
+    {
+      "label": "rust",
+      "permalink": "/blog/tags/rust"
+    },
+    {
+      "label": "open source",
+      "permalink": "/blog/tags/open-source"
+    }
+  ],
+  "readingTime": 2.755,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Sijie Yang",
+      "url": "https://github.com/iyangsj",
+      "imageURL": "https://github.com/iyangsj.png",
+      "key": "iyangsj"
+    }
+  ],
+  "frontMatter": {
+    "slug": "tquic-open-source",
+    "title": "Announcing the TQUIC open source project",
+    "authors": [
+      "iyangsj"
+    ],
+    "tags": [
+      "tquic",
+      "quic",
+      "rust",
+      "open source"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "unversionedId": "how_to_contribute/development_guides",
+  "id": "how_to_contribute/development_guides",
+  "title": "Development Guides",
+  "description": "Layout of the top level directories",
+  "source": "@site/docs/how_to_contribute/development_guides.md",
+  "sourceDirName": "how_to_contribute",
+  "slug": "/how_to_contribute/development_guides",
+  "permalink": "/docs/how_to_contribute/development_guides",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/how_to_contribute/development_guides.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "Jan 11, 2024",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Development Guides",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to contribute documents",
+    "permalink": "/docs/how_to_contribute/contribute_docs"
+  },
+  "next": {
+    "title": "Releasing Process",
+    "permalink": "/docs/how_to_contribute/releasing_process"
+  }
+}

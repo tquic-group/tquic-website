@@ -1,0 +1,31 @@
+{
+  "unversionedId": "how_to_contribute/releasing_process",
+  "id": "how_to_contribute/releasing_process",
+  "title": "Releasing Process",
+  "description": "The development of TQUIC follows git-flow branching model and adheres to Semantic Versioning.",
+  "source": "@site/docs/how_to_contribute/releasing_process.md",
+  "sourceDirName": "how_to_contribute",
+  "slug": "/how_to_contribute/releasing_process",
+  "permalink": "/docs/how_to_contribute/releasing_process",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/how_to_contribute/releasing_process.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "Jan 11, 2024",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Releasing Process",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Development Guides",
+    "permalink": "/docs/how_to_contribute/development_guides"
+  },
+  "next": {
+    "title": "Frequently Asked Questions",
+    "permalink": "/docs/category/frequently-asked-questions"
+  }
+}

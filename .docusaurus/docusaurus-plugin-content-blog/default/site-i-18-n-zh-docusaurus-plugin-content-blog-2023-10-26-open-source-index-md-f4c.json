@@ -1,0 +1,50 @@
+{
+  "permalink": "/zh/blog/tquic-open-source",
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/blog/2023-10-26-open-source/index.md",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-blog/2023-10-26-open-source/index.md",
+  "title": "TQUIC正式开源",
+  "description": "TQUIC是基于RUST语言开发的QUIC协议库，目标是打造一个具有持续技术影响力，高性能、快传输、高质量的传输协议库。",
+  "date": "2023-10-26T00:00:00.000Z",
+  "formattedDate": "2023年10月26日",
+  "tags": [
+    {
+      "label": "tquic",
+      "permalink": "/zh/blog/tags/tquic"
+    },
+    {
+      "label": "quic",
+      "permalink": "/zh/blog/tags/quic"
+    },
+    {
+      "label": "rust",
+      "permalink": "/zh/blog/tags/rust"
+    },
+    {
+      "label": "open source",
+      "permalink": "/zh/blog/tags/open-source"
+    }
+  ],
+  "readingTime": 4.395,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Sijie Yang",
+      "url": "https://github.com/iyangsj",
+      "imageURL": "https://github.com/iyangsj.png",
+      "key": "iyangsj"
+    }
+  ],
+  "frontMatter": {
+    "slug": "tquic-open-source",
+    "title": "TQUIC正式开源",
+    "authors": [
+      "iyangsj"
+    ],
+    "tags": [
+      "tquic",
+      "quic",
+      "rust",
+      "open source"
+    ]
+  }
+}

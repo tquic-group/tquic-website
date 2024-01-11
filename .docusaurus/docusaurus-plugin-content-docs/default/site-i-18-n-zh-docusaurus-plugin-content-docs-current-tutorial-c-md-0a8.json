@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorial/c",
+  "id": "tutorial/c",
+  "title": "使用C语言接口",
+  "description": "本文介绍应用程序如何使用C语言的TQUIC接口。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/tutorial/c.md",
+  "sourceDirName": "tutorial",
+  "slug": "/tutorial/c",
+  "permalink": "/zh/docs/tutorial/c",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial/c.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "2024年1月11日",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "使用C语言接口",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "使用Rust语言接口",
+    "permalink": "/zh/docs/tutorial/rust"
+  },
+  "next": {
+    "title": "API Reference",
+    "permalink": "/zh/docs/category/api-reference"
+  }
+}

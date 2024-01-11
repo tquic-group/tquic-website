@@ -1,0 +1,31 @@
+{
+  "unversionedId": "faq/development",
+  "id": "faq/development",
+  "title": "开发相关",
+  "description": "代码评审有哪些注意事项?",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/faq/development.md",
+  "sourceDirName": "faq",
+  "slug": "/faq/development",
+  "permalink": "/zh/docs/faq/development",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/faq/development.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "2024年1月11日",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "开发相关",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "问题定位相关",
+    "permalink": "/zh/docs/faq/trouble_shooting"
+  },
+  "next": {
+    "title": "Further Readings",
+    "permalink": "/zh/docs/category/further-readings"
+  }
+}

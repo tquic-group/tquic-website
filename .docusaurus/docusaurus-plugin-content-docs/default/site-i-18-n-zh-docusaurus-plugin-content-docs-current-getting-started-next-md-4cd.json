@@ -1,0 +1,31 @@
+{
+  "unversionedId": "getting_started/next",
+  "id": "getting_started/next",
+  "title": "下一步",
+  "description": "如果你希望集成 TQUIC 协议库，请参考Tutorial和API参考说明。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/getting_started/next.md",
+  "sourceDirName": "getting_started",
+  "slug": "/getting_started/next",
+  "permalink": "/zh/docs/getting_started/next",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/getting_started/next.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "2024年1月11日",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "下一步",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "示例工具",
+    "permalink": "/zh/docs/getting_started/demo"
+  },
+  "next": {
+    "title": "Tutorial",
+    "permalink": "/zh/docs/category/tutorial"
+  }
+}

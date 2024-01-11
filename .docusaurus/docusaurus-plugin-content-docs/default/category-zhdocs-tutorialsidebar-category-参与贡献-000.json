@@ -1,0 +1,16 @@
+{
+  "title": "参与贡献",
+  "description": "关于如何参与贡献TQUIC开源项目",
+  "slug": "/category/contributing",
+  "permalink": "/zh/docs/category/contributing",
+  "navigation": {
+    "previous": {
+      "title": "C/C++语言HTTP/3接口说明",
+      "permalink": "/zh/docs/api_reference/c_h3"
+    },
+    "next": {
+      "title": "贡献代码",
+      "permalink": "/zh/docs/how_to_contribute/contribute_codes"
+    }
+  }
+}

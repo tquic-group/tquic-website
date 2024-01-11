@@ -1,0 +1,31 @@
+{
+  "unversionedId": "further_readings/comparison",
+  "id": "further_readings/comparison",
+  "title": "Comparison",
+  "description": "The industry currently offers numerous available QUIC implementations. However, we have selected only a few for comparative analysis. The main reasons behind our choice are as follows:",
+  "source": "@site/docs/further_readings/comparison.md",
+  "sourceDirName": "further_readings",
+  "slug": "/further_readings/comparison",
+  "permalink": "/docs/further_readings/comparison",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/further_readings/comparison.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1704956763,
+  "formattedLastUpdatedAt": "Jan 11, 2024",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Comparison",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Further Readings",
+    "permalink": "/docs/category/further-readings"
+  },
+  "next": {
+    "title": "Benchmark",
+    "permalink": "/docs/further_readings/benchmark"
+  }
+}
