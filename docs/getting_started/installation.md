@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Supported Platforms
 
-TQUIC is written in the [Rust language](https://www.rust-lang.org/). Currently, it runs on Linux, MacOS, iOS, and Android, with future versions planned for other platforms.
+TQUIC is written in the [Rust language](https://www.rust-lang.org/). Currently, it runs on Linux, MacOS, FreeBSD, iOS, and Android, with future versions planned for other platforms.
 
 
 ## Prerequisites
@@ -72,6 +72,35 @@ cargo build --release -F ffi
   </TabItem>
 
 
+  <TabItem value="FreeBSD" label="FreeBSD">
+
+To build TQUIC for FreeBSD, you need the following:
+```bash
+sudo pkg install -y gmake
+```
+
+To build TQUIC for FreeBSD, run the following commands:
+```bash
+git clone https://github.com/tencent/tquic --recursive
+cd tquic
+
+cargo build --release --all
+```
+
+:::tip
+The `--release` option enables cargo to build optimized artifacts and put them in the directory `./target/release/`, instead of the default location `./target/debug/`.
+
+The `--all` option enables cargo to build both the tquic library and example tools.
+:::
+
+If you want to enable the C API, just add `-F ffi` option to the `cargo build` command:
+
+```bash
+cargo build --release -F ffi
+```
+  </TabItem>
+
+
   <TabItem value="Android" label="Android">
 
 To build TQUIC for Android, you need the following:
@@ -102,6 +131,12 @@ cd tquic
 # The -t <architecture> and -p <NDK version> options are mandatory.
 cargo ndk -t arm64-v8a -p 21 -- build --features ffi --release
 ```
+
+:::tip
+The `--release` option enables cargo to build optimized artifacts and put them in the directory `./target/release/`, instead of the default location `./target/debug/`.
+
+The `--features ffi` option enables cargo to build the C API.
+:::
   </TabItem>
 
 
@@ -132,6 +167,12 @@ cd tquic
 
 cargo lipo --features ffi --release
 ```
+
+:::tip
+The `--release` option enables cargo to build optimized artifacts and put them in the directory `./target/release/`, instead of the default location `./target/debug/`.
+
+The `--features ffi` option enables cargo to build the C API.
+:::
   </TabItem>
 
 </Tabs>

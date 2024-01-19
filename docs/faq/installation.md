@@ -33,6 +33,18 @@ git submodule init && git submodule update
 ```
 
 
+## Failed to build the sources released on github?
+
+The released code (https://github.com/Tencent/tquic/releases) does not include the tquic dependent submodule due to GitHub restrictions.
+
+The recommended command to obtain the specified version of tquic source codes is as follows.
+
+```
+# Please replace the 'vx.y.z' with the version you need
+git -b vx.y.z https://github.com/Tencent/tquic.git
+```
+
+
 ## Not found example tools of TQUIC?
 
 If you cannot locate the example tools in the directory `./target/release`, it is likely because you forgot to include the build option `--all` or `--release`.

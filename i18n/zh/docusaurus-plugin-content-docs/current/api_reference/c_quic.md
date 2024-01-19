@@ -962,6 +962,13 @@ typedef enum quic_congestion_control_algorithm {
 ```
 * 拥塞控制算法。
 
+| 算法 | 说明 |
+| --------- | ----------- |
+| CUBIC | [CUBIC](https://www.rfc-editor.org/rfc/rfc9438.html)采用三次函数代替TCP标准的线性窗口增加函数，提高了高速率和远距离网络下的可扩展性和稳定性。 |
+| BBR | [BBR](https://datatracker.ietf.org/doc/html/draft-cardwell-iccrg-bbr-congestion-control)使用连接的传输速率、往返时间和丢包率的最新测量值来构建网络路径的显式模型，并使用该模型来控制数据传输速度和允许最大在途数据量。 |
+| BBR3 | [BBRv3](https://datatracker.ietf.org/meeting/117/materials/slides-117-ccwg-bbrv3-algorithm-bug-fixes-and-public-internet-deployment-00)是BBR的最新版本，包括各种修复和算法更新，可以降低数据包重传率并小幅改善延迟。(实验性)  |
+| COPA | [COPA](https://web.mit.edu/copa/)是一种基于时延的拥塞控制算法。COPA基于目标函数，可以通过用户指定的参数配置实现吞吐量和延迟之间的权衡。(实验性)  |
+
 
 #### quic_multipath_algorithm
 ```c
@@ -972,6 +979,12 @@ typedef enum quic_multipath_algorithm {
 } quic_multipath_algorithm;
 ```
 * 多路径调度算法。
+
+| 算法 | 说明 |
+| --------- | ----------- |
+| MIN_RTT | MIN_RTT选择所有可用路径中平滑RTT最小的路径发送分组。它旨在优化吞吐并实现负载均衡，适用于批量传输应用。(实验性)  |
+| REDUNDANT | REDUNDANT在所有可用路径上冗余发送所有数据包。它利用额外的带宽来最小化延迟，从而减少应用程序的总流完成时间，这些应用程序可以通过一条路径满足有限的带宽需求。在存在两条可用带宽不同的路径的情况下，它确保有效吞吐量至少等同于最优单路径。(实验性)  |
+| ROUND_ROBIN | ROUND_ROBIN以轮询方式在可用路径上发送分组。仅用于测试目的。 |
 
 
 #### quic_log_level

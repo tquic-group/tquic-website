@@ -33,6 +33,18 @@ git submodule init && git submodule update
 ```
 
 
+## 编译Github发布页面的TQUIC源码失败？
+
+由于Github的限制，其发布的TQUIC源代码(https://github.com/Tencent/tquic/releases) 并未包含TQUIC依赖的子模块代码。
+
+建议采用如下命令获取TQUIC指定版本代码:
+
+```
+# 请将'vx.y.z'替换未你所需要的版本
+git -b vx.y.z https://github.com/Tencent/tquic.git
+```
+
+
 ## 没有找到TQUIC示例工具?
 
 如果你无法在`./target/release`目录下找到示例工具，很可能是因为忘记包含构建选项`--all`或`--release`。

@@ -976,6 +976,13 @@ typedef enum quic_congestion_control_algorithm {
 ```
 * Congestion control algorithms.
 
+| Algorithm | Description |
+| --------- | ----------- |
+| CUBIC | [CUBIC](https://www.rfc-editor.org/rfc/rfc9438.html) uses a cubic function instead of a linear window increase function of the current TCP standards to improve scalability and stability under fast and long-distance networks. |
+| BBR | [BBR](https://datatracker.ietf.org/doc/html/draft-cardwell-iccrg-bbr-congestion-control) uses recent measurements of a transport connection's delivery rate, round-trip time, and packet loss rate to build an explicit model of the network path. The model is then used to control data transmission speed and the maximum volume of data allowed in flight in the network at any time. |
+| BBR3 | [BBRv3](https://datatracker.ietf.org/meeting/117/materials/slides-117-ccwg-bbrv3-algorithm-bug-fixes-and-public-internet-deployment-00) is the latest version of BBR, including various fixes and algorithm updates that reduce packet re-transmit rate and slightly improve latency. (Experimental) |
+| COPA | [COPA](https://web.mit.edu/copa/) is a tunable delay-based congestion control algorithm. COPA is based on an objective function where the trade-off between throughput and delay can be configured via a user-specified parameter. (Experimental) |
+
 
 #### quic_multipath_algorithm
 ```c
@@ -986,6 +993,12 @@ typedef enum quic_multipath_algorithm {
 } quic_multipath_algorithm;
 ```
 * Multipath scheduling algorithms.
+
+| Algorithm | Description |
+| --------- | ----------- |
+| MIN_RTT | The scheduler sends packets over the path with the lowest smoothed RTT among all available paths. It aims to optimize throughput and achieve load balancing, making it particularly advantageous for bulk transfer applications. |
+| REDUNDANT | The scheduler sends all packets redundantly on all available paths. It utilizes additional bandwidth to minimize latency, thereby reducing the overall flow completion time for applications with bounded bandwidth requirements that can be met by a single path. In scenarios where two paths with varying available bandwidths are present, it ensures a goodput at least equivalent to the best single path. |
+| ROUND_ROBIN | The scheduler sends packets over available paths in a round robin manner. It is only used for testing purposes. |
 
 
 #### quic_log_level
