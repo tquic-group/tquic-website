@@ -36,7 +36,7 @@ cd tquic/tools/script
 
 ## 如何将生成的qlog日志转换为JSON格式？
 
-TQUIC目前生成的qlog文件采用流式的**JSON-SEQ**格式。可以使用下面命令将其转换为**JSON**格式:
+TQUIC目前生成的qlog文件采用流式的[**JSON-SEQ**](https://datatracker.ietf.org/doc/html/rfc7464)格式。可以使用下面命令将其转换为**JSON**格式:
 ```
 sed 's/^\x1e//' <qlog-filename> | jq -s '.[1:] as $events | .[0] | .trace.events=$events | .traces=[.trace] | del(.trace) | .qlog_format="JSON"'
 ```

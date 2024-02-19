@@ -41,7 +41,7 @@ git submodule init && git submodule update
 
 ```
 # 请将'vx.y.z'替换未你所需要的版本
-git -b vx.y.z https://github.com/Tencent/tquic.git
+git clone -b vx.y.z --recursive https://github.com/Tencent/tquic.git
 ```
 
 

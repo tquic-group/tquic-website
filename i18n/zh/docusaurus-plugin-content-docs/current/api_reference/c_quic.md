@@ -188,8 +188,7 @@ void quic_config_set_pto_linear_factor(struct quic_config_t *config, uint64_t v)
 ```
 void quic_config_set_max_pto(struct quic_config_t *config, uint64_t v);
 ```
-* Set the upper limit of probe timeout in milliseconds. A Probe Timeout (PTO) triggers the sending of one or two probe datagrams and enables a connection to recover from loss of tail packets or acknowledgments. See RFC 9002 Section 6.2.
-* 设置探测超时的最大值，单位是毫秒。探测超(PTO)会触发发送一个或两个探测数据报，使得连接可以恢复丢失的尾包或确认。
+* 设置探测超时的最大值，单位是毫秒。探测超(PTO)会触发发送一个或两个探测数据报，使得连接可以恢复丢失的尾包或确认。参见RFC 9000第6.2节。
 * 默认没有限制。
 
 

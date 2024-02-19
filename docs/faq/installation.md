@@ -41,7 +41,7 @@ The recommended command to obtain the specified version of tquic source codes is
 
 ```
 # Please replace the 'vx.y.z' with the version you need
-git -b vx.y.z https://github.com/Tencent/tquic.git
+git clone -b vx.y.z --recursive https://github.com/Tencent/tquic.git
 ```
 
 
