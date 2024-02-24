@@ -66,6 +66,12 @@ const config = {
       src: 'https://hm.baidu.com/hm.js?5f7e9bd63c8f9a814fb73b9ff8c2235b',
       async: true,
     },
+    // Ask AI
+    {
+      src: 'https://cdn.glimelab.ai/widget/1.0.0/widget.js',
+      async: true,
+      onload: 'window.glime.init(`44520fce49ba43798485a628d6928e22`)'
+    },
   ],
 
   themes: [
