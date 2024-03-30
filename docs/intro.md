@@ -54,7 +54,7 @@ TQUIC is written in a memory safety language and immune to Buffer Overflow vulne
 Extensive automated testing, including unit testing, fuzz testing, integration testing, performance benchmarking, interoperability testing, and more.
 
 * **Protocol Compliance**:
-TQUIC has been [verified by formal specification using the Ivy tool](further_readings/conformance/). It has also passed [IETF interoperability tests](https://github.com/marten-seemann/quic-interop-runner).
+TQUIC has been [verified by formal specification using the Ivy tool](further_readings/conformance/). It has also passed [IETF interoperability tests](https://github.com/marten-seemann/quic-interop-runner) with mainstream implementations.
 
 
 :::note

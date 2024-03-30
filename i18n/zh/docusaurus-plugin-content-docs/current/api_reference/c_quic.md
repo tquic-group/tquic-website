@@ -3,7 +3,7 @@ title: C/C++语言QUIC接口说明
 sidebar_position: 3
 ---
 
-# C/C++接口说明
+# C/C++语言QUIC接口说明
 
 ## 准备工作
 

@@ -45,7 +45,7 @@ TQUIC是IETF QUIC协议的实现。它是一个高性能、轻量级、跨平台
 
 * **高质量**：TQUIC包括充分的自动化测试，包括单元测试、模糊测试、集成测试、性能基准测试、互操作性测试等。
 
-* **协议一致性**：TQUIC已通过[基于Ivy的形式化规范验证](further_readings/conformance/)。同时通过了IETF互操作性测试。
+* **协议一致性**：TQUIC已通过[基于Ivy的形式化规范验证](further_readings/conformance/)。同时与主流实现之间通过了IETF互操作性测试。
 
 :::note
 一些高级特性将在随后版本中逐步开源，详见[版本记录](https://github.com/tencent/tquic/releases)。
