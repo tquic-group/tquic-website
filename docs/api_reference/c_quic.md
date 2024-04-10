@@ -306,7 +306,7 @@ void quic_config_set_send_batch_size(struct quic_config_t *config,
 
 #### quic_config_set_tls_config
 ```c
-void quic_config_set_tls_config(struct quic_config_t *config, SSL_CTX *ssl_ctx);
+void quic_config_set_tls_config(struct quic_config_t *config, struct quic_tls_config_t *tls_config);
 ```
 * Set TLS config.
 
@@ -318,6 +318,96 @@ void quic_config_set_tls_selector(struct quic_config_t *config,
                                   quic_tls_config_select_context_t context);
 ```
 * Set TLS config selector.
+
+
+### TLS configurations initialization
+
+#### quic_tls_config_new
+```c
+struct quic_tls_config_t *quic_tls_config_new(void);
+```
+* Create a new TlsConfig.
+* The caller is responsible for the memory of the TlsConfig and should properly destroy it by calling `quic_tls_config_free`.
+
+
+#### quic_tls_config_new_with_ssl_ctx
+```c
+struct quic_tls_config_t *quic_tls_config_new_with_ssl_ctx(SSL_CTX *ssl_ctx);
+```
+* Create a new TlsConfig with SSL_CTX.
+* The caller is responsible for the memory of TlsConfig and SSL_CTX when use this function.
+
+:::tip
+It is recommended to use `quic_tls_config_new` to create a TLS configuration.
+:::
+
+:::note
+When create a TlsConfig from raw SSL_CTX, `TlsSession::session()` and `TlsSession::set_keylog()` won't take effect.
+:::
+
+
+#### quic_tls_config_free
+```c
+void quic_tls_config_free(struct quic_tls_config_t *tls_config);
+```
+* Destroy a TlsConfig instance.
+
+
+### TLS configurations customization
+
+#### quic_tls_config_set_certificate_file
+```c
+int quic_tls_config_set_certificate_file(struct quic_tls_config_t *tls_config,
+                                         const char *cert_file);
+```
+* Set the PEM-encoded certificate file.
+
+
+#### quic_tls_config_set_private_key_file
+```c
+int quic_tls_config_set_private_key_file(struct quic_tls_config_t *tls_config,
+                                         const char *key_file);
+```
+* Set the PEM-encoded private key file.
+
+
+#### quic_tls_config_set_ca_certs
+```c
+int quic_tls_config_set_ca_certs(struct quic_tls_config_t *tls_config, const char *ca_path);
+```
+* Set CA certificates.
+
+
+#### quic_tls_config_set_verify
+```c
+void quic_tls_config_set_verify(struct quic_tls_config_t *tls_config, bool verify);
+```
+* Set the certificate verification behavior.
+
+
+#### quic_tls_config_set_early_data_enabled
+```
+void quic_tls_config_set_early_data_enabled(struct quic_tls_config_t *tls_config, bool enable);
+```
+* Set whether early data is allowed.
+
+
+#### quic_tls_config_set_application_protos
+```c
+int quic_tls_config_set_application_protos(struct quic_tls_config_t *tls_config,
+                                           const char *const *protos,
+                                           intptr_t proto_num);
+```
+* Set the list of supported application protocols.
+
+
+#### quic_tls_config_set_ticket_key
+```c
+int quic_tls_config_set_ticket_key(struct quic_tls_config_t *tls_config,
+                                   const uint8_t *ticket_key,
+                                   size_t ticket_key_len);
+```
+* Set session ticket key for server.
 
 
 ## Endpoint
@@ -597,12 +687,37 @@ void *quic_conn_context(struct quic_conn_t *conn);
 
 ### Connection logging and tracing
 
+#### quic_conn_set_keylog
+```c
+void quic_conn_set_keylog(struct quic_conn_t *conn, void (*cb)(const uint8_t *data,
+                                                               size_t data_len,
+                                                               void *argp), void *argp);
+```
+* Set the callback for writing keylog.
+* `cb` is a callback function that will be called for each keylog.
+* `data` is a keylog message and `argp` is user-defined data that will be passed to the callback.
+
+
 #### quic_conn_set_keylog_fd
 ```c
 void quic_conn_set_keylog_fd(struct quic_conn_t *conn,
                              int fd);
 ```
 * Set keylog file
+
+
+#### quic_conn_set_qlog
+```c
+void quic_conn_set_qlog(struct quic_conn_t *conn,
+                        void (*cb)(const uint8_t *data, size_t data_len, void *argp),
+                        void *argp,
+                        const char *title,
+                        const char *desc);
+```
+* Set the callback for writing qlog.
+* `cb` is a callback function that will be called for each qlog.
+* `data` is a qlog message and `argp` is user-defined data that will be passed to the callback.
+* `title` and `desc` respectively refer to the "title" and "description" sections of qlog.
 
 
 #### quic_conn_set_qlog_fd
@@ -697,6 +812,15 @@ void quic_conn_session(struct quic_conn_t *conn,
 * Return the session data used by resumption.
 
 
+#### quic_conn_early_data_reason
+```c
+int quic_conn_early_data_reason(struct quic_conn_t *conn,
+                                const uint8_t **out,
+                                size_t *out_len);
+```
+* Return details why 0-RTT was accepted or rejected.
+
+
 #### quic_conn_is_draining
 ```c
 bool quic_conn_is_draining(struct quic_conn_t *conn);
@@ -760,6 +884,35 @@ int quic_stream_new(struct quic_conn_t *conn,
                     bool incremental);
 ```
 * Create a stream with specified priority.
+
+:::tip
+This is a low-level API for stream creation. It is recommended to use
+`quic_stream_bidi_new` for bidirectional streams or `quic_stream_uni_new`
+for unidrectional streams.
+:::
+
+
+#### quic_stream_bidi_new
+```
+int quic_stream_bidi_new(struct quic_conn_t *conn,
+                         uint8_t urgency,
+                         bool incremental,
+                         uint64_t *stream_id);
+```
+* Create a new quic bidiectional stream with the given priority.
+* If success, the output parameter `stream_id` carrys the id of the created stream.
+
+
+#### quic_stream_uni_new
+```
+int quic_stream_uni_new(struct quic_conn_t *conn,
+                        uint8_t urgency,
+                        bool incremental,
+                        uint64_t *stream_id);
+```
+* Create a new quic uniectional stream with the given priority.
+* If success, the output parameter `stream_id` carrys the id of the created stream.
+
 
 ### Stream priorities
 
@@ -1019,8 +1172,11 @@ typedef enum quic_log_level {
 
 #### quic_set_logger
 ```c
-void quic_set_logger(void (*cb)(const uint8_t *line, void *argp), void *argp, quic_log_level level);
+void quic_set_logger(void (*cb)(const uint8_t *data, size_t data_len, void *argp),
+                     void *argp,
+                     quic_log_level level);
 ```
 * Set callback for logging.
-* `cb` is a callback function that will be called for each log message. `line` is a null-terminated log message and `argp` is user-defined data that will be passed to the callback.
+* `cb` is a callback function that will be called for each log message.
+* `data` is a `\n` terminated log message and `argp` is user-defined data that will be passed to the callback.
 

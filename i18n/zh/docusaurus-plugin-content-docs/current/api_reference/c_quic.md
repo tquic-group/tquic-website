@@ -301,7 +301,7 @@ void quic_config_set_send_batch_size(struct quic_config_t *config,
 
 #### quic_config_set_tls_config
 ```c
-void quic_config_set_tls_config(struct quic_config_t *config, SSL_CTX *ssl_ctx);
+void quic_config_set_tls_config(struct quic_config_t *config, struct quic_tls_config_t *tls_config);
 ```
 * 设置TLS配置。
 
@@ -313,6 +313,96 @@ void quic_config_set_tls_selector(struct quic_config_t *config,
                                   quic_tls_config_select_context_t context);
 ```
 * 设置TLS配置选择器。
+
+
+### TLS配置初始化
+
+#### quic_tls_config_new
+```c
+struct quic_tls_config_t *quic_tls_config_new(void);
+```
+* 创建一个`TlsConfig`实例。
+* 调用方负责管理该内存, 通过调用`quic_tls_config_free`来释放`TlsConfig`实例内存。
+
+
+#### quic_tls_config_new_with_ssl_ctx
+```c
+struct quic_tls_config_t *quic_tls_config_new_with_ssl_ctx(SSL_CTX *ssl_ctx);
+```
+* 通过SSL_CTX来创建一个`TlsConfig`实例。
+* 调用方负责管理该内存, 通过调用`quic_tls_config_free`来释放`TlsConfig`实例内存。
+
+:::tip
+建议使用`quic_tls_config_new`创建TLS配置`TlsConfig`。
+:::
+
+:::note
+当使用该接口创建TLS配置`TlsConfig`时, `TlsSession::session()` 和 `TlsSession::set_keylog()` 接口将无效。
+:::
+
+
+#### quic_tls_config_free
+```c
+void quic_tls_config_free(struct quic_tls_config_t *tls_config);
+```
+* 释放`TlsConfig`实例。
+
+
+### TLS配置定制
+
+#### quic_tls_config_set_certificate_file
+```c
+int quic_tls_config_set_certificate_file(struct quic_tls_config_t *tls_config,
+                                         const char *cert_file);
+```
+* 设置PEM格式证书文件路径。
+
+
+#### quic_tls_config_set_private_key_file
+```c
+int quic_tls_config_set_private_key_file(struct quic_tls_config_t *tls_config,
+                                         const char *key_file);
+```
+* 设置PEM格式私钥文件路径。
+
+
+#### quic_tls_config_set_ca_certs
+```c
+int quic_tls_config_set_ca_certs(struct quic_tls_config_t *tls_config, const char *ca_path);
+```
+* 设置CA证书文件路径。
+
+
+#### quic_tls_config_set_verify
+```c
+void quic_tls_config_set_verify(struct quic_tls_config_t *tls_config, bool verify);
+```
+* 设置启用或禁用证书检查。
+
+
+#### quic_tls_config_set_early_data_enabled
+```
+void quic_tls_config_set_early_data_enabled(struct quic_tls_config_t *tls_config, bool enable);
+```
+* 设置启用或禁用0-RTT。
+
+
+#### quic_tls_config_set_application_protos
+```c
+int quic_tls_config_set_application_protos(struct quic_tls_config_t *tls_config,
+                                           const char *const *protos,
+                                           intptr_t proto_num);
+```
+* 设置支持的应用层协议列表。
+
+
+#### quic_tls_config_set_ticket_key
+```c
+int quic_tls_config_set_ticket_key(struct quic_tls_config_t *tls_config,
+                                   const uint8_t *ticket_key,
+                                   size_t ticket_key_len);
+```
+* 设置会话ticket密钥（仅服务端）。
 
 
 ## 端点
@@ -584,12 +674,37 @@ int quic_set_logger(void (*cb)(const uint8_t *line, void *argp),
 * 设置协议栈日志回调，并用level指定日志输出级别。
 
 
+#### quic_conn_set_keylog
+```c
+void quic_conn_set_keylog(struct quic_conn_t *conn, void (*cb)(const uint8_t *data,
+                                                               size_t data_len,
+                                                               void *argp), void *argp);
+```
+* 设置keylog日志回调
+* `cb` 是回调函数，针对每条keylog日志会调用该函数
+* `data` 是一条keylog日志， `argp` 是用户自定义数据，作为参数传给给回调函数`cb`
+
+
 #### quic_conn_set_keylog_fd
 ```c
 void quic_conn_set_keylog_fd(struct quic_conn_t *conn,
                              int fd);
 ```
 * 设置keylog文件。
+
+
+#### quic_conn_set_qlog
+```c
+void quic_conn_set_qlog(struct quic_conn_t *conn,
+                        void (*cb)(const uint8_t *data, size_t data_len, void *argp),
+                        void *argp,
+                        const char *title,
+                        const char *desc);
+```
+* 设置qlog日志回调
+* `cb` 是回调函数，针对每条qlog日志会调用该函数
+* `data` 是一条qlog日志，`argp` 是用户自定义数据，作为参数传给给回调函数`cb`
+* `title` 和 `desc` 代表qlog日志中的 "title" 和 "description" 字段值
 
 
 #### quic_conn_set_qlog_fd
@@ -683,6 +798,15 @@ void quic_conn_session(struct quic_conn_t *conn,
 * 返回用于会话复用的会话状态数据。
 
 
+#### quic_conn_early_data_reason
+```c
+int quic_conn_early_data_reason(struct quic_conn_t *conn,
+                                const uint8_t **out,
+                                size_t *out_len);
+```
+* 返回0-RTT被拒绝的详细原因。
+
+
 #### quic_conn_is_draining
 ```c
 bool quic_conn_is_draining(struct quic_conn_t *conn);
@@ -746,6 +870,32 @@ int quic_stream_new(struct quic_conn_t *conn,
                     bool incremental);
 ```
 * 创建指定优先级的流
+
+:::tip
+该接口是低级别的流创建API。建议使用 `quic_stream_bidi_new`创建双向流，使用`quic_stream_uni_new`创建单向流。
+:::
+
+
+#### quic_stream_bidi_new
+```
+int quic_stream_bidi_new(struct quic_conn_t *conn,
+                         uint8_t urgency,
+                         bool incremental,
+                         uint64_t *stream_id);
+```
+* 创建指定优先级的双向流
+* 如果成功，出参数`stream_id`携带了创建流的ID
+
+
+#### quic_stream_uni_new
+```
+int quic_stream_uni_new(struct quic_conn_t *conn,
+                        uint8_t urgency,
+                        bool incremental,
+                        uint64_t *stream_id);
+```
+* 创建指定优先级的单向流
+* 如果成功，出参数`stream_id`携带了创建流的ID
 
 
 ### 流优先级
@@ -1004,8 +1154,10 @@ typedef enum quic_log_level {
 
 #### quic_set_logger
 ```c
-void quic_set_logger(void (*cb)(const uint8_t *line, void *argp), void *argp, quic_log_level level);
+void quic_set_logger(void (*cb)(const uint8_t *data, size_t data_len, void *argp),
+                     void *argp,
+                     quic_log_level level);
 ```
 * 设置日志回调函数。
-* 对于每条日志，会调用函数`cb`。`line` 代表null结尾的日志消息。`argp`代表传递给回调函数`cb`的用户自定义数据
-
+* 对于每条日志，会调用函数`cb`。
+* `data` 代表`\n`结尾的日志消息。`argp`代表传递给回调函数`cb`的用户自定义数据。
