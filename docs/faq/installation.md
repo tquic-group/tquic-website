@@ -54,3 +54,14 @@ If you cannot locate the example tools in the directory `./target/release`, it i
 
 If you cannot locate the static or dynamic c library of tquic in the directory `./target/release`, it is likely because you forgot to include the build option `-F ffi` or `--release`.
 
+
+## How to specify the MacOS deployment target for TQUIC library?
+
+You can use the environment varialbe `MACOSX_DEPLOYMENT_TARGET` to signal targeting older versions of macOS.
+
+```
+# Replace `10.12` with your desired deployment target
+export MACOSX_DEPLOYMENT_TARGET=10.12
+cargo build --release -F ffi
+```
+

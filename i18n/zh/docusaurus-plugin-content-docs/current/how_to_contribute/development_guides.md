@@ -46,16 +46,16 @@ cbindgen -o include/tquic.h
 
 ## 单元测试
 
-* 如何查看单元测试的日志输出
+* 如何查看单元测试的日志输出？
 
 ```
 # 请将`test_name`替换为测试用例的名称
 RUST_LOG=trace cargo test test_name -- --nocapture
 ```
 
-* 如何查看单元测试覆盖率
+* 如何查看单元测试覆盖率？
 
-建议使用I`tarpaulin`生成单元测试覆盖率报告：
+建议使用`tarpaulin`生成单元测试覆盖率报告：
 
 ```
 # 安装tarpaulin
@@ -68,19 +68,19 @@ cargo tarpaulin --exclude-files "deps/*" -o html
 
 ## 模糊测试
 
-* 如何安装模糊测试工具[cargo-fuzz](https://github.com/rust-fuzz/cargo-fuzz)
+* 如何安装模糊测试工具[cargo-fuzz](https://github.com/rust-fuzz/cargo-fuzz)？
 ```
 rustup install nightly
 rustup default nightly
 cargo install cargo-fuzz
 ```
 
-* 如果查看已有模糊测试用例
+* 如何查看已有模糊测试用例？
 ```
 cargo fuzz list
 ```
 
-* 如果执行指定模糊测试用例
+* 如何执行指定模糊测试用例？
 ```
 cargo fuzz run <target_name> -- -max_total_time=30
 ```

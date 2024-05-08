@@ -55,3 +55,11 @@ git clone -b vx.y.z --recursive https://github.com/Tencent/tquic.git
 如果你无法在`./target/release`目录中找到TQUIC的C静态库或动态库，很可能是因为忘记包含构建选项'`-F ffi`或`--release`.。
 
 
+## 如何为低版本MacOS编译TQUIC库？
+可以使用`MACOSX_DEPLOYMENT_TARGET`环境变量来指定支持旧版本的macOS。
+
+```
+# 请将'10.12'替换为你所需要的部署目标
+export MACOSX_DEPLOYMENT_TARGET=10.12
+cargo build --release -F ffi
+```

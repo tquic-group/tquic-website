@@ -40,17 +40,14 @@ openssl x509 -req -in cert.csr -signkey cert.key -out cert.crt
 Usage: tquic_server [OPTIONS]
 
 Options:
-  -c, --cert <FILE>
-          TLS certificate in PEM format [default: ./cert.crt]
-  -k, --key <FILE>
-          TLS private key in PEM format [default: ./cert.key]
-      --log-level <LOG_LEVEL>
-          Log level, support OFF/ERROR/WARN/INFO/DEBUG/TRACE [default: INFO]
-  -l, --listen <ADDR>
-          Address to listen [default: 0.0.0.0:4433]
-      --root <DIR>
-          Document root directory [default: ./]
-      --ticket-key <STR>
+  -l, --listen <ADDR>  Address to listen [default: 0.0.0.0:4433]
+  -c, --cert <FILE>    TLS certificate in PEM format [default: ./cert.crt]
+  -k, --key <FILE>     TLS private key in PEM format [default: ./cert.key]
+  -r, --root <DIR>     Document root directory [default: ./]
+  -h, --help           Print help
+
+Protocol:
+  -t, --ticket-key <STR>
           Session ticket key [default: "tquic key"]
       --address-token-key <STR>
           Key for generating address token
@@ -59,15 +56,17 @@ Options:
       --disable-stateless-reset
           Disable stateless reset
       --congestion-control-algor <CONGESTION_CONTROL_ALGOR>
-          Congestion control algorithm [default: CUBIC]
+          Congestion control algorithm [default: BBR]
       --initial-congestion-window <NUM>
           Initial congestion window in packets [default: 32]
       --min-congestion-window <NUM>
           Minimum congestion window in packets [default: 4]
-      --enable-multipath
+  -e, --enable-multipath
           Enable multipath transport
-      --multipath-algor <MULTIPATH_ALGOR>
+  -m, --multipath-algor <MULTIPATH_ALGOR>
           Multipath scheduling algorithm [default: MINRTT]
+      --active-cid-limit <NUM>
+          Set active_connection_id_limit transport parameter. Values lower than 2 will be ignored [default: 2]
       --recv-udp-payload-size <NUM>
           Set max_udp_payload_size transport parameter [default: 65527]
       --send-udp-payload-size <NUM>
@@ -78,14 +77,23 @@ Options:
           Connection idle timeout in microseconds [default: 30000]
       --initial-rtt <TIME>
           Initial RTT in milliseconds [default: 333]
-      --keylog-file <FILE>
-          Save TLS key log into the given file
-      --qlog-file <FILE>
-          Save QUIC qlog into the given file
-      --send-batch-size <NUM>
-          Batch size for sending packets [default: 16]
-  -h, --help
-          Print help
+      --pto-linear-factor <NUM>
+          Linear factor for calculating the probe timeout [default: 10]
+      --max-pto <TIME>
+          Upper limit of probe timeout in microseconds [default: 10000]
+      --anti-amplification-factor <NUM>
+          Anti amplification factor [default: 3]
+      --cid-len <NUM>
+          Length of connection id in bytes [default: 8]
+
+Output:
+      --log-level <LOG_LEVEL>  Log level, support OFF/ERROR/WARN/INFO/DEBUG/TRACE [default: INFO]
+      --log-file <FILE>        Log file path. If no file is specified, logs will be written to `stderr`
+      --keylog-file <FILE>     Save TLS key log into the given file
+      --qlog-dir <DIR>         Save qlog file (<trace_id>.qlog) into the given directory
+
+Misc:
+      --send-batch-size <NUM>  Batch size for sending packets [default: 16]
 ```
 
 
@@ -111,33 +119,30 @@ Options:
 Usage: tquic_client [OPTIONS] [URLS]...
 
 Arguments:
-  [URLS]...  Request URLs. The host of the first one is used as SNI in Client Hello
+  [URLS]...  Request URLs. The host of the first url is used as TLS SNI
 
 Options:
+  -c, --connect-to <ADDR>       Server's address
+      --local-addresses <ADDR>  Optional local IP addresses for client. e.g 192.168.1.10,192.168.2.20
+  -h, --help                    Print help
+
+Concurrency:
   -t, --threads <NUM>
           Number of threads [default: 1]
       --max-concurrent-conns <NUM>
           Number of concurrent connections per thread [default: 1]
-      --max-requests-per-thread <NUM>
-          Number of requests per thread. "0" means infinity mode [default: 1]
-      --max-requests-per-conn <NUM>
-          Number of max requests per connection. "0" means infinity mode [default: 1]
       --max-concurrent-requests <NUM>
-          Number of max concurrent requests per connection [default: 1]
+          Number of concurrent requests per connection [default: 1]
+      --max-requests-per-conn <NUM>
+          Number of max requests per connection before re-establishment. "0" means infinity mode [default: 1]
+      --total-requests-per-thread <NUM>
+          Total number of requests to send per thread. "0" means infinity mode. Values below number of urls will be considered as number of urls [default: 1]
   -d, --duration <TIME>
-          Benchmarking duration in seconds. "0" means infinity mode. Client will exit if either the max_requests or duration is reached [default: 0]
-      --max-sample <NUM>
-          Number of max samples per thread used for request time statistics [default: 100000]
-  -p, --print-res
-          Print response header and body to stdout
-      --log-level <STR>
-          Log level, support OFF/ERROR/WARN/INFO/DEBUG/TRACE [default: INFO]
-  -c, --connect-to <ADDR>
-          Override server's address
+          Benchmarking duration in seconds. "0" means infinity mode. Client will exit upon reaching the total_requests_per_thread or duration limit [default: 0]
+
+Protocol:
   -a, --alpn <STR>
-          ALPN, support "http/0.9", "hq-interop" and "h3", separated by "," [default: h3,http/0.9,hq-interop]
-      --dump-path <DIR>
-          Dump response body into the given directory. If the specified directory does not exist, a new directory will be created
+          ALPN, separated by "," [default: h3,http/0.9,hq-interop] [possible values: hq-interop, http/0.9, h3]
   -s, --session-file <FILE>
           File used for session resumption
   -e, --enable-early-data
@@ -145,7 +150,7 @@ Options:
       --disable-stateless-reset
           Disable stateless reset
       --congestion-control-algor <CONGESTION_CONTROL_ALGOR>
-          Congestion control algorithm [default: CUBIC]
+          Congestion control algorithm [default: BBR]
       --initial-congestion-window <NUM>
           Initial congestion window in packets [default: 32]
       --min-congestion-window <NUM>
@@ -154,8 +159,8 @@ Options:
           Enable multipath transport
       --multipath-algor <MULTIPATH_ALGOR>
           Multipath scheduling algorithm [default: MINRTT]
-      --local-addresses <ADDR>
-          Extra local addresses for client
+      --active-cid-limit <NUM>
+          Set active_connection_id_limit transport parameter. Values lower than 2 will be ignored [default: 2]
       --recv-udp-payload-size <NUM>
           Set max_udp_payload_size transport parameter [default: 65527]
       --send-udp-payload-size <NUM>
@@ -166,12 +171,26 @@ Options:
           Connection idle timeout in microseconds [default: 30000]
       --initial-rtt <TIME>
           Initial RTT in milliseconds [default: 333]
-  -k, --keylog-file <FILE>
-          Save TLS key log into the given file
-      --qlog-file <FILE>
-          Save QUIC qlog into the given file
+      --pto-linear-factor <NUM>
+          Linear factor for calculating the probe timeout [default: 10]
+      --max-pto <TIME>
+          Upper limit of probe timeout in microseconds [default: 10000]
+      --cid-len <NUM>
+          Length of connection id in bytes [default: 8]
+
+Output:
+  -p, --print-res           Print response header and body to stdout
+      --dump-dir <DIR>      Dump response body into the given directory. If the specified directory does not exist, a new directory will be created
+      --log-level <STR>     Log level, support OFF/ERROR/WARN/INFO/DEBUG/TRACE [default: INFO]
+      --log-file <FILE>     Log file path. If no file is specified, logs will be written to `stderr`
+  -k, --keylog-file <FILE>  Save TLS key log into the given file
+      --qlog-dir <DIR>      Save qlog file (<trace_id>.qlog) into the given directory
+
+Misc:
+      --connection-failure-threshold <NUM>
+          Client will exit if consecutive failure reaches the threshold at the beginning [default: 10]
       --send-batch-size <NUM>
           Batch size for sending packets [default: 1]
-  -h, --help
-          Print help
+      --max-sample <NUM>
+          Number of max samples per thread used for request time statistics [default: 100000]
 ```
