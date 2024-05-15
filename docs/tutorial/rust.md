@@ -191,18 +191,17 @@ loop {
     // Wait for timeout or IO events
     poll.poll(&mut events, timeout)?;
 
-    // Process timeout events
-    if events.is_empty() {
-        endpoint.on_timeout(Instant::now());
-        continue;
-    }
-
     // Process IO events
     for event in events.iter() {
         if event.is_readable() {
             process_read_event()?;
         }
     }
+
+    // Process timeout events.
+    // Note: Since `poll()` doesn't clearly tell if there was a timeout when it returns,
+    // it is up to the endpoint to check for a timeout and deal with it.
+    endpoint.on_timeout(Instant::now());
 }
 ```
 

@@ -188,18 +188,16 @@ loop {
     // 等待超时或IO事件发生
     poll.poll(&mut events, timeout)?;
 
-    // 处理超时事件
-    if events.is_empty() {
-        endpoint.on_timeout(Instant::now());
-        continue;
-    }
-
     // 处理IO事件
     for event in events.iter() {
         if event.is_readable() {
             process_read_event()?;
         }
     }
+
+    // 处理超时事件
+    // 注意：由于`poll()`在返回时并未明确指出是否发生了超时，需要由endpoint检查是否发生了超时并处理。
+    endpoint.on_timeout(Instant::now());
 }
 ```
 
