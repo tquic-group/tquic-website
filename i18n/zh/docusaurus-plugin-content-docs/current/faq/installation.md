@@ -52,7 +52,7 @@ git clone -b vx.y.z --recursive https://github.com/Tencent/tquic.git
 
 ## 没有找到TQUIC C库文件?
 
-如果你无法在`./target/release`目录中找到TQUIC的C静态库或动态库，很可能是因为忘记包含构建选项'`-F ffi`或`--release`.。
+如果你无法在`./target/release`目录中找到TQUIC的C静态库或动态库，很可能是因为忘记包含构建选项`-F ffi`或`--release`。
 
 
 ## 如何为低版本MacOS编译TQUIC库？

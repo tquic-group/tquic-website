@@ -74,6 +74,7 @@ void quic_config_set_initial_max_data(struct quic_config_t *config,
                                       uint64_t v);
 ```
 * 设置`initial_max_data`传输参数，单元是字节。它代表了在连接上可以发送的最大数据量的初始值。
+* 配置值不超过由配置项`max_connection_window`指定的上限。
 * 默认值是`10485760` (10 MB)。
 
 #### quic_config_set_initial_max_stream_data_bidi_local
@@ -82,6 +83,7 @@ void quic_config_set_initial_max_stream_data_bidi_local(struct quic_config_t *co
                                                         uint64_t v);
 ```
 * 设置`initial_max_stream_data_bidi_local`传输参数，单元是字节。
+* 配置值不超过由配置项`max_stream_window`指定的上限。
 * 默认值是`5242880` (5 MB)。
 
 
@@ -91,6 +93,7 @@ void quic_config_set_initial_max_stream_data_bidi_remote(struct quic_config_t *c
                                                          uint64_t v);
 ```
 * 设置`initial_max_stream_data_bidi_remote`传输参数，单元是字节。
+* 配置值不超过由配置项`max_stream_window`指定的上限。
 * 默认值是`2097152` (2 MB)。
 
 
@@ -100,6 +103,7 @@ void quic_config_set_initial_max_stream_data_uni(struct quic_config_t *config,
                                                  uint64_t v);
 ```
 * 设置`initial_max_stream_data_uni`传输参数，单元是字节。
+* 配置值不超过由配置项`max_stream_window`指定的上限。
 * 默认值是`1048576` (1 MB)。
 
 
@@ -232,6 +236,7 @@ void quic_config_set_max_stream_window(struct quic_config_t *config,
                                        uint64_t v);
 ```
 * 设置流级别流量控制窗口的最大大小，单元是字节。
+* 该值不应大于`max_connection_window`配置。
 * 默认值是`16777216` (16MB)。
 
 #### quic_config_set_max_concurrent_conns

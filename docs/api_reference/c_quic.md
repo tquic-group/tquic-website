@@ -77,6 +77,7 @@ void quic_config_set_initial_max_data(struct quic_config_t *config,
 ```
 * Set the `initial_max_data` transport parameter in bytes. It means the initial
   value for the maximum amount of data that can be sent on the connection.
+* The value is capped by the setting `max_connection_window`.
 * The default value is `10485760` (10 MB).
 
 
@@ -86,6 +87,7 @@ void quic_config_set_initial_max_stream_data_bidi_local(struct quic_config_t *co
                                                         uint64_t v);
 ```
 * Set the `initial_max_stream_data_bidi_local` transport parameter in bytes.
+* The value is capped by the setting `max_stream_window`.
 * The default value is `5242880` (5 MB).
 
 
@@ -95,6 +97,7 @@ void quic_config_set_initial_max_stream_data_bidi_remote(struct quic_config_t *c
                                                          uint64_t v);
 ```
 * Set the `initial_max_stream_data_bidi_remote` transport parameter in bytes.
+* The value is capped by the setting `max_stream_window`.
 * The default value is `2097152` (2 MB).
 
 
@@ -104,6 +107,7 @@ void quic_config_set_initial_max_stream_data_uni(struct quic_config_t *config,
                                                  uint64_t v);
 ```
 * Set the `initial_max_stream_data_uni` transport parameter in bytes.
+* The value is capped by the setting `max_stream_window`.
 * The default value is `1048576` (1 MB).
 
 
@@ -237,6 +241,7 @@ void quic_config_set_max_stream_window(struct quic_config_t *config,
                                        uint64_t v);
 ```
 * Set the maximum size of the stream flow control window in bytes.
+* The value should not be greater than the setting `max_connection_window`.
 * The default value is `16777216` (16MB).
 
 #### quic_config_set_max_concurrent_conns

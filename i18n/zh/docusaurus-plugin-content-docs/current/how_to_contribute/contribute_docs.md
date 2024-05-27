@@ -7,7 +7,7 @@ sidebar_position: 2
 
 TQUIC文档主要分为以下几类别：
 - 用户指南：帮助用户入门及使用TQUIC库
-- 开发者指南：帮助开发者参入贡献
+- 开发者指南：帮助开发者参与贡献
 
 文档基于[docusaurus](https://docusaurus.io/docs/installation)构建。你可以专注于内容，仅需编写[Markdown](https://guides.github.com/features/Mastering-markdown/)文件即可。
 
