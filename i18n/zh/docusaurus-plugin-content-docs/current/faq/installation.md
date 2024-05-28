@@ -63,3 +63,8 @@ git clone -b vx.y.z --recursive https://github.com/Tencent/tquic.git
 export MACOSX_DEPLOYMENT_TARGET=10.12
 cargo build --release -F ffi
 ```
+
+## 如何优化TQUIC移动端库文件大小
+
+请参考[移动端库文件大小优化](../further_readings/minimizing_size/)
+

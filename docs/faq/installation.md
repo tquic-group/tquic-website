@@ -65,3 +65,8 @@ export MACOSX_DEPLOYMENT_TARGET=10.12
 cargo build --release -F ffi
 ```
 
+
+## How to optimize Library File Size for TQUIC on Mobile Platforms
+
+Please refer to [Library Size Optimization](../further_readings/minimizing_size/)
+
