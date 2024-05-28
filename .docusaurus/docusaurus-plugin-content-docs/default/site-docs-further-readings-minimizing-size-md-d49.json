@@ -1,0 +1,31 @@
+{
+  "unversionedId": "further_readings/minimizing_size",
+  "id": "further_readings/minimizing_size",
+  "title": "Library Size Optimization",
+  "description": "Basic Optimization",
+  "source": "@site/docs/further_readings/minimizing_size.md",
+  "sourceDirName": "further_readings",
+  "slug": "/further_readings/minimizing_size",
+  "permalink": "/docs/further_readings/minimizing_size",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/further_readings/minimizing_size.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1716893915,
+  "formattedLastUpdatedAt": "May 28, 2024",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Library Size Optimization",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Conformance",
+    "permalink": "/docs/further_readings/conformance"
+  },
+  "next": {
+    "title": "Resources",
+    "permalink": "/docs/further_readings/resources"
+  }
+}

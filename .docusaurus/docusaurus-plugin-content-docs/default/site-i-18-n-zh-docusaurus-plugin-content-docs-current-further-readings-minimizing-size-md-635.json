@@ -1,0 +1,31 @@
+{
+  "unversionedId": "further_readings/minimizing_size",
+  "id": "further_readings/minimizing_size",
+  "title": "移动端库大小优化",
+  "description": "基本优化",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/further_readings/minimizing_size.md",
+  "sourceDirName": "further_readings",
+  "slug": "/further_readings/minimizing_size",
+  "permalink": "/zh/docs/further_readings/minimizing_size",
+  "draft": false,
+  "editUrl": "https://github.com/tencent/tquic-website/tree/main/packages/create-docusaurus/templates/shared/docs/further_readings/minimizing_size.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Sijie Yang",
+  "lastUpdatedAt": 1716893915,
+  "formattedLastUpdatedAt": "2024年5月28日",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "移动端库大小优化",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "一致性测试",
+    "permalink": "/zh/docs/further_readings/conformance"
+  },
+  "next": {
+    "title": "相关资源",
+    "permalink": "/zh/docs/further_readings/resources"
+  }
+}
