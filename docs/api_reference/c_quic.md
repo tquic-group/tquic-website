@@ -826,6 +826,13 @@ int quic_conn_early_data_reason(struct quic_conn_t *conn,
 * Return details why 0-RTT was accepted or rejected.
 
 
+#### quic_conn_is_closing
+```c
+bool quic_conn_is_closing(struct quic_conn_t *conn);
+```
+* Check whether the connection is closing.
+
+
 #### quic_conn_is_draining
 ```c
 bool quic_conn_is_draining(struct quic_conn_t *conn);
@@ -838,6 +845,13 @@ bool quic_conn_is_draining(struct quic_conn_t *conn);
 bool quic_conn_is_closed(struct quic_conn_t *conn);
 ```
 * Check whether the connection is closing.
+
+
+#### quic_conn_is_handshake_timeout
+```c
+bool quic_conn_is_handshake_timeout(struct quic_conn_t *conn);
+```
+* Check whether the connection was closed due to handshake timeout.
 
 
 #### quic_conn_is_idle_timeout
@@ -875,6 +889,12 @@ bool quic_conn_local_error(struct quic_conn_t *conn,
 ```
 * Returns the local error, if any.
 
+
+#### quic_conn_stats
+```c
+const struct quic_conn_stats_t *quic_conn_stats(struct quic_conn_t *conn);
+```
+* Return statistics about the connection.
 
 
 ## Stream
@@ -1171,6 +1191,48 @@ typedef enum quic_log_level {
 } quic_log_level;
 ```
 * An enum representing the available verbosity level filters of the logger.
+
+
+#### quic_conn_stats_t
+```c
+typedef struct quic_conn_stats_t {
+  /**
+   * Total number of received packets.
+   */
+  uint64_t recv_count;
+  /**
+   * Total number of bytes received on the connection.
+   */
+  uint64_t recv_bytes;
+  /**
+   * Total number of sent packets.
+   */
+  uint64_t sent_count;
+  /**
+   * Total number of bytes sent on the connection.
+   */
+  uint64_t sent_bytes;
+  /**
+   * Total number of lost packets.
+   */
+  uint64_t lost_count;
+  /**
+   * Total number of bytes lost on the connection.
+   */
+  uint64_t lost_bytes;
+} quic_conn_stats_t;
+```
+* Statistics about a QUIC connection.
+
+| Item | Description |
+| ---- | ----------- |
+| recv_count | Total number of received packets on the connection |
+| recv_bytes | Total number of bytes received on the connection |
+| sent_count | Total number of sent packets on the connection |
+| sent_bytes | Total number of bytes sent on the connection |
+| lost_count | Total number of lost packets on the connection |
+| lost_bytes | Total number of bytes lost on the connection |
+
 
 
 ### Miscellaneous functions

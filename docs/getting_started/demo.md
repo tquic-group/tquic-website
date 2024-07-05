@@ -44,6 +44,7 @@ Options:
   -k, --key <FILE>     TLS private key in PEM format [default: ./cert.key]
   -r, --root <DIR>     Document root directory [default: ./]
   -h, --help           Print help
+  -V, --version        Print version
 
 Protocol:
   -t, --ticket-key <STR>
@@ -92,7 +93,8 @@ Output:
       --qlog-dir <DIR>         Save qlog file (<trace_id>.qlog) into the given directory
 
 Misc:
-      --send-batch-size <NUM>  Batch size for sending packets [default: 16]
+      --send-batch-size <NUM>      Batch size for sending packets [default: 16]
+      --zerortt-buffer-size <NUM>  buffer size for disordered zerortt packets on the server [default: 1000]
 ```
 
 
@@ -124,6 +126,7 @@ Options:
   -c, --connect-to <ADDR>       Server's address
       --local-addresses <ADDR>  Optional local IP addresses for client. e.g 192.168.1.10,192.168.2.20
   -h, --help                    Print help
+  -V, --version                 Print version
 
 Concurrency:
   -t, --threads <NUM>

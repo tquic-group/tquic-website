@@ -812,11 +812,18 @@ int quic_conn_early_data_reason(struct quic_conn_t *conn,
 * 返回0-RTT被拒绝的详细原因。
 
 
+#### quic_conn_is_closing
+```c
+bool quic_conn_is_closing(struct quic_conn_t *conn);
+```
+* 检查连接是否处理关闭中（closing）状态。
+
+
 #### quic_conn_is_draining
 ```c
 bool quic_conn_is_draining(struct quic_conn_t *conn);
 ```
-* 检查连接示范处于排空(Draining)状态。
+* 检查连接是否处于排空（Draining）状态。
 
 
 #### quic_conn_is_closed
@@ -824,6 +831,13 @@ bool quic_conn_is_draining(struct quic_conn_t *conn);
 bool quic_conn_is_closed(struct quic_conn_t *conn);
 ```
 * 检查连接是否已关闭
+
+
+#### quic_conn_is_handshake_timeout
+```c
+bool quic_conn_is_handshake_timeout(struct quic_conn_t *conn);
+```
+* 检查连接是否由于握手超时而关闭。
 
 
 #### quic_conn_is_idle_timeout
@@ -860,6 +874,13 @@ bool quic_conn_local_error(struct quic_conn_t *conn,
                            size_t *reason_len);
 ```
 * 返回可能的本地错误。
+
+
+#### quic_conn_stats
+```c
+const struct quic_conn_stats_t *quic_conn_stats(struct quic_conn_t *conn);
+```
+* 返回连接级别的统计信息
 
 
 
@@ -1153,6 +1174,30 @@ typedef enum quic_log_level {
 } quic_log_level;
 ```
 * 日志级别。
+
+
+#### quic_conn_stats_t
+```c
+typedef struct quic_conn_stats_t {
+  uint64_t recv_count;
+  uint64_t recv_bytes;
+  uint64_t sent_count;
+  uint64_t sent_bytes;
+  uint64_t lost_count;
+  uint64_t lost_bytes;
+} quic_conn_stats_t;
+```
+* QUIC连接级别的统计信息。
+
+| 字段 | 含义 |
+| ---------- | ------------ |
+| recv_count | 连接总接收报文数 |
+| recv_bytes | 连接总接收字节数 |
+| sent_count | 连接总发送报文数 |
+| sent_bytes | 连接总发送字节数 |
+| lost_count | 连接总丢失报文数 |
+| lost_bytes | 连接总丢失字节数 |
+
 
 
 ### 其他函数
