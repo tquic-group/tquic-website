@@ -77,6 +77,7 @@ void quic_config_set_initial_max_data(struct quic_config_t *config,
 * 配置值不超过由配置项`max_connection_window`指定的上限。
 * 默认值是`10485760` (10 MB)。
 
+
 #### quic_config_set_initial_max_stream_data_bidi_local
 ```c
 void quic_config_set_initial_max_stream_data_bidi_local(struct quic_config_t *config,
@@ -156,24 +157,72 @@ void quic_config_set_congestion_control_algorithm(struct quic_config_t *config,
 ```c
 void quic_config_set_initial_congestion_window(struct quic_config_t *config, uint64_t v);
 ```
-* 设置初始拥塞窗口大小，单位是报文数
-* 默认值是10
+* 设置初始拥塞窗口大小，单位是报文数。
+* 默认值是`10`。
 
 
 #### quic_config_set_min_congestion_window
 ```c
 void quic_config_set_min_congestion_window(struct quic_config_t *config, uint64_t v);
 ```
-* 设置最小拥塞窗口大小，单位是报文数
-* 默认值是2
+* 设置最小拥塞窗口大小，单位是报文数。
+* 默认值是`2`。
 
+
+#### quic_config_set_slow_start_thresh
+```c
+void quic_config_set_slow_start_thresh(struct quic_config_t *config, uint64_t v);
+```
+* 设置慢启动阈值，单位是报文。
+* 默认是u64最大值。
+
+
+#### quic_config_set_bbr_probe_rtt_duration
+```c
+void quic_config_set_bbr_probe_rtt_duration(struct quic_config_t *config, uint64_t v);
+```
+* 设置BBR ProbePTT状态最小持续时间，单位是毫秒。
+* 默认值是`200`毫秒。
+
+
+#### quic_config_enable_bbr_probe_rtt_based_on_bdp
+```c
+void quic_config_enable_bbr_probe_rtt_based_on_bdp(struct quic_config_t *config, bool v);
+```
+* 在BBR ProbeRTT状态下使用的拥塞窗口是否基于BDP计算。
+* 默认值是false。
+
+
+#### quic_config_set_bbr_probe_bw_cwnd_gain
+```c
+void quic_config_set_bbr_probe_rtt_cwnd_gain(struct quic_config_t *config, double v);
+```
+* 设置BBR ProbeRTT状态下的cwnd gain。
+* 默认值是`0.75`。
+
+
+#### quic_config_set_bbr_rtprop_filter_len
+```c
+void quic_config_set_bbr_rtprop_filter_len(struct quic_config_t *config, uint64_t v);
+```
+* 设置BBR RTProp最小过滤器窗口大小，单位是毫秒。
+* 默认值是`10000`毫秒。
+
+
+#### quic_config_set_bbr_probe_bw_cwnd_gain
+```c
+void quic_config_set_bbr_probe_bw_cwnd_gain(struct quic_config_t *config, double v);
+```
+* 设置BBR ProbeBW状态下的cwnd gain。
+* 默认值是`2.0`。
+ 
 
 #### quic_config_set_initial_rtt
 ```c
 void quic_config_set_initial_rtt(struct quic_config_t *config, uint64_t v);
 ```
 * 设置初始RTT，单位是毫秒。
-* 默认值是333毫秒。
+* 默认值是`333`毫秒。
 
 :::note
 请谨慎更改该配置。如果设置的值小于默认值，将导致握手数据包的重传更激进。
@@ -342,7 +391,9 @@ struct quic_tls_config_t *quic_tls_config_new_with_ssl_ctx(SSL_CTX *ssl_ctx);
 :::
 
 :::note
-当使用该接口创建TLS配置`TlsConfig`时, `TlsSession::session()` 和 `TlsSession::set_keylog()` 接口将无效。
+当使用该接口创建TLS配置`TlsConfig`时, `quic_conn_session()` 和 `quic_conn_set_keylog()` 接口将无效。
+相应的，可使用BoringSSL库提供的[`SSL_CTX_sess_set_new_cb()`](https://commondatastorage.googleapis.com/chromium-boringssl-docs/ssl.h.html#SSL_CTX_sess_set_new_cb
+) and [`SSL_CTX_set_keylog_callback()`](https://commondatastorage.googleapis.com/chromium-boringssl-docs/ssl.h.html#SSL_CTX_set_keylog_callback)接口。
 :::
 
 

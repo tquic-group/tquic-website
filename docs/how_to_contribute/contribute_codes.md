@@ -28,7 +28,7 @@ Visit the home page of GitHub [TQUIC](https://github.com/tencent/tquic), and the
 Clone the forked repository to local:
 
 ```bash
-$ git clone https://github.com/USERNAME/tquic
+$ git clone https://github.com/USERNAME/tquic --recursive
 $ cd tquic
 ```
 
@@ -82,7 +82,7 @@ $ git add test
 It's required that the commit message is also given on every Git commit, so that other developers can be informed about the changes made. Type `git commit` to realize it.
 
 ```bash
-$ git commit
+$ git commit -m "commit message about your changes"
 [my-cool-stuff c703c041] add test file
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 233

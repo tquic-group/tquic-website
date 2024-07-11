@@ -161,7 +161,7 @@ void quic_config_set_congestion_control_algorithm(struct quic_config_t *config,
 void quic_config_set_initial_congestion_window(struct quic_config_t *config, uint64_t v);
 ```
 * Set the initial congestion window in packets.
-* The default value is 10.
+* The default value is `10`.
 
 
 #### quic_config_set_min_congestion_window
@@ -169,7 +169,55 @@ void quic_config_set_initial_congestion_window(struct quic_config_t *config, uin
 void quic_config_set_min_congestion_window(struct quic_config_t *config, uint64_t v);
 ```
 * Set the minimal congestion window in packets.
-* The default value is 2.
+* The default value is `2`.
+
+
+#### quic_config_set_slow_start_thresh
+```c
+void quic_config_set_slow_start_thresh(struct quic_config_t *config, uint64_t v);
+```
+* Set the threshold for slow start in packets.
+* The default value is the maximum value of u64.
+
+
+#### quic_config_set_bbr_probe_rtt_duration
+```c
+void quic_config_set_bbr_probe_rtt_duration(struct quic_config_t *config, uint64_t v);
+```
+* Set the minimum duration for BBR ProbeRTT state in milliseconds.
+* The default value is `200` milliseconds.
+
+
+#### quic_config_enable_bbr_probe_rtt_based_on_bdp
+```c
+void quic_config_enable_bbr_probe_rtt_based_on_bdp(struct quic_config_t *config, bool v);
+```
+* Enable using a cwnd based on bdp during ProbeRTT state.
+* The default value is false.
+
+
+#### quic_config_set_bbr_probe_bw_cwnd_gain
+```c
+void quic_config_set_bbr_probe_rtt_cwnd_gain(struct quic_config_t *config, double v);
+```
+* Set the cwnd gain for BBR ProbeRTT state.
+* The default value is `0.75`.
+
+
+#### quic_config_set_bbr_rtprop_filter_len
+```c
+void quic_config_set_bbr_rtprop_filter_len(struct quic_config_t *config, uint64_t v);
+```
+* Set the length of the BBR RTProp min filter window in milliseconds.
+* The default value is `10000` milliseconds.
+
+
+#### quic_config_set_bbr_probe_bw_cwnd_gain
+```c
+void quic_config_set_bbr_probe_bw_cwnd_gain(struct quic_config_t *config, double v);
+```
+* Set the cwnd gain for BBR ProbeBW state.
+* The default value is `2.0`.
 
 
 #### quic_config_set_initial_rtt
@@ -177,7 +225,7 @@ void quic_config_set_min_congestion_window(struct quic_config_t *config, uint64_
 void quic_config_set_initial_rtt(struct quic_config_t *config, uint64_t v);
 ```
 * Set the initial RTT in milliseconds.
-* The default value is 333ms.
+* The default value is `333` ms.
 
 :::note
 The configuration should be changed with caution. Setting a value less than the default
@@ -347,7 +395,9 @@ It is recommended to use `quic_tls_config_new` to create a TLS configuration.
 :::
 
 :::note
-When create a TlsConfig from raw SSL_CTX, `TlsSession::session()` and `TlsSession::set_keylog()` won't take effect.
+When create a TlsConfig from raw SSL_CTX, `quic_conn_session()` and `quic_conn_set_keylog()` won't take effect.
+Instead, you should use BoringSSL's [`SSL_CTX_sess_set_new_cb()`](https://commondatastorage.googleapis.com/chromium-boringssl-docs/ssl.h.html#SSL_CTX_sess_set_new_cb
+) and [`SSL_CTX_set_keylog_callback()`](https://commondatastorage.googleapis.com/chromium-boringssl-docs/ssl.h.html#SSL_CTX_set_keylog_callback).
 :::
 
 
@@ -519,9 +569,9 @@ typedef struct quic_transport_methods_t {
 } quic_transport_methods_t;
 ```
 
- * `on_conn_created` is called when a new connection has been created. This callback is called
-  as soon as connection object is created inside the endpoint, but
-  before the handshake is done. This callback is optional.
+* `on_conn_created` is called when a new connection has been created. This callback is called
+ as soon as connection object is created inside the endpoint, but
+ before the handshake is done. This callback is optional.
 
 
 #### on_conn_established
@@ -532,7 +582,7 @@ typedef struct quic_transport_methods_t {
   /* ... */
 } quic_transport_methods_t;
 ```
- * `on_conn_established` is called when the handshake is completed. This callback is optional.
+* `on_conn_established` is called when the handshake is completed. This callback is optional.
 
 
 #### on_conn_closed
@@ -543,9 +593,9 @@ typedef struct quic_transport_methods_t {
   /* ... */
 } quic_transport_methods_t;
 ```
- * `on_conn_closed` is called when the connection is closed. The connection is no longer
-   accessible after this callback returns. It is a good time to clean up
-   the connection context. This callback is optional.
+* `on_conn_closed` is called when the connection is closed. The connection is no longer
+  accessible after this callback returns. It is a good time to clean up
+  the connection context. This callback is optional.
 
 
 #### on_stream_created
@@ -557,7 +607,7 @@ typedef struct quic_transport_methods_t {
   /* ... */
 } quic_transport_methods_t;
 ```
- * `on_stream_created` is called when the stream is created. This callback is optional.
+* `on_stream_created` is called when the stream is created. This callback is optional.
 
 
 #### on_stream_readable
@@ -569,9 +619,9 @@ typedef struct quic_transport_methods_t {
   /* ... */
 } quic_transport_methods_t;
 ```
- * `on_stream_readable` is called when the stream is readable. This callback is called when either
-   there are bytes to be read or an error is ready to be collected. This
-   callback is optional.
+* `on_stream_readable` is called when the stream is readable. This callback is called when either
+  there are bytes to be read or an error is ready to be collected. This
+  callback is optional.
 
 
 #### on_stream_writable
@@ -583,7 +633,7 @@ typedef struct quic_transport_methods_t {
   /* ... */
 } quic_transport_methods_t;
 ```
- * `on_stream_writable` is called when the stream is writable. This callback is optional.
+* `on_stream_writable` is called when the stream is writable. This callback is optional.
 
 
 #### on_stream_closed
@@ -594,9 +644,9 @@ typedef struct quic_transport_methods_t {
   /* ... */
 } quic_transport_methods_t;
 ```
- * `on_stream_closed` is called when the stream is closed. The stream is no longer accessible
-   after this callback returns. It is a good time to clean up the stream
-   context. This callback is optional.
+* `on_stream_closed` is called when the stream is closed. The stream is no longer accessible
+  after this callback returns. It is a good time to clean up the stream
+  context. This callback is optional.
 
 
 #### on_new_token
@@ -609,8 +659,8 @@ typedef struct quic_transport_methods_t {
   /* ... */
 } quic_transport_methods_t;
 ```
- * `on_new_token` is called when client receives a token in NEW_TOKEN frame. This callback
-   is optional.
+* `on_new_token` is called when client receives a token in NEW_TOKEN frame. This callback
+  is optional.
 
 
 ### Miscellaneous functions
@@ -1061,7 +1111,7 @@ int quic_conn_add_path(struct quic_conn_t *conn,
                        socklen_t remote_len,
                        uint64_t *index);
 ```
- * Add a new path on the client connection.
+* Add a new path on the client connection.
 
 
 ### Miscellaneous functions
@@ -1196,29 +1246,11 @@ typedef enum quic_log_level {
 #### quic_conn_stats_t
 ```c
 typedef struct quic_conn_stats_t {
-  /**
-   * Total number of received packets.
-   */
   uint64_t recv_count;
-  /**
-   * Total number of bytes received on the connection.
-   */
   uint64_t recv_bytes;
-  /**
-   * Total number of sent packets.
-   */
   uint64_t sent_count;
-  /**
-   * Total number of bytes sent on the connection.
-   */
   uint64_t sent_bytes;
-  /**
-   * Total number of lost packets.
-   */
   uint64_t lost_count;
-  /**
-   * Total number of bytes lost on the connection.
-   */
   uint64_t lost_bytes;
 } quic_conn_stats_t;
 ```

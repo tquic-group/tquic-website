@@ -28,7 +28,7 @@ sidebar_position: 1
 将派生的TQUIC代码库下载到本地：
 
 ```bash
-$ git clone https://github.com/USERNAME/tquic
+$ git clone https://github.com/USERNAME/tquic --recursive
 $ cd tquic
 ```
 
@@ -82,7 +82,7 @@ $ git add test
 每次Git提交都需要填写提交消息，以便其他开发人员可以了解所做的更改。输入`git commit`：
 
 ```bash
-$ git commit
+$ git commit -m "commit message about your changes"
 [my-cool-stuff c703c041] add test file
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 233
