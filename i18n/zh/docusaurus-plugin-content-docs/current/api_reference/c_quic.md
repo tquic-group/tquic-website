@@ -645,6 +645,16 @@ typedef struct quic_transport_methods_t {
 
 ### 其他函数
 
+#### quic_endpoint_set_cid_generator
+```c
+void quic_endpoint_set_cid_generator(struct quic_endpoint_t *endpoint,
+                                     const struct ConnectionIdGeneratorMethods *cid_gen_methods,
+                                     ConnectionIdGeneratorContext cid_gen_ctx);
+```
+* 设置自定义CID生成器
+* 默认会使用随机CID生成器
+
+
 #### quic_endpoint_exist_connection
 ```c
 bool quic_endpoint_exist_connection(struct quic_endpoint_t *endpoint,
@@ -931,7 +941,28 @@ bool quic_conn_local_error(struct quic_conn_t *conn,
 ```c
 const struct quic_conn_stats_t *quic_conn_stats(struct quic_conn_t *conn);
 ```
-* 返回连接级别的统计信息
+* 返回连接级别的统计信息。
+* `struct quic_conn_stats_t`类型定义如下
+
+```c
+typedef struct quic_conn_stats_t {
+  uint64_t recv_count;
+  uint64_t recv_bytes;
+  uint64_t sent_count;
+  uint64_t sent_bytes;
+  uint64_t lost_count;
+  uint64_t lost_bytes;
+} quic_conn_stats_t;
+```
+
+| 字段 | 含义 |
+| ---------- | ------------ |
+| recv_count | 连接总接收报文数 |
+| recv_bytes | 连接总接收字节数 |
+| sent_count | 连接总发送报文数 |
+| sent_bytes | 连接总发送字节数 |
+| lost_count | 连接总丢失报文数 |
+| lost_bytes | 连接总丢失字节数 |
 
 
 
@@ -1131,6 +1162,70 @@ void quic_conn_path_iter_free(struct quic_path_address_iter_t *iter);
 * 释放FourTupleIter。
 
 
+#### quic_conn_path_stats
+```c
+const struct quic_path_stats_t *quic_conn_path_stats(struct quic_conn_t *conn,
+                                                     const struct sockaddr *local,
+                                                     socklen_t local_len,
+                                                     const struct sockaddr *remote,
+                                                     socklen_t remote_len);
+```
+* 获取指定路径最近统计信息
+
+```c
+typedef struct quic_path_stats_t {
+  uint64_t recv_count;
+  uint64_t recv_bytes;
+  uint64_t sent_count;
+  uint64_t sent_bytes;
+  uint64_t lost_count;
+  uint64_t lost_bytes;
+  uint64_t acked_count;
+  uint64_t acked_bytes;
+  uint64_t init_cwnd;
+  uint64_t final_cwnd;
+  uint64_t max_cwnd;
+  uint64_t min_cwnd;
+  uint64_t max_inflight;
+  uint64_t loss_event_count;
+  uint64_t cwnd_limited_count;
+  uint64_t cwnd_limited_duration;
+  uint64_t min_rtt;
+  uint64_t max_rtt;
+  uint64_t srtt;
+  uint64_t rttvar;
+  bool in_slow_start;
+  uint64_t pacing_rate;
+} quic_path_stats_t;
+```
+
+| Item | Description |
+| ---- | ----------- |
+| recv_count | 路径上接收报文数 |
+| recv_bytes | 路径上接收字节数 |
+| sent_count | 路径上发送报文数 |
+| sent_bytes | 路径上发送字节数 |
+| lost_count | 路径上丢失报文数 |
+| lost_bytes | 路径上丢失字节数 |
+| acked_count | 路径上总确认报文数 |
+| acked_bytes | 路径上总确认字节数 |
+| init_cwnd | 初始拥塞窗口，单位字节 |
+| final_cwnd | 当前拥塞窗口，单位字节 |
+| max_cwnd | 最大拥塞窗口，单位字节 |
+| min_cwnd | 最小拥塞窗口，单位字节 |
+| max_inflight | 最大在途数据，单位字节 |
+| loss_event_count | 总丢包事件数 |
+| cwnd_limited_count | 总拥塞窗口受限事件数 |
+| cwnd_limited_duration | 总拥塞窗口受限时长，单位微秒 |
+| min_rtt | 最小往返延迟，单位微秒 |
+| max_rtt | 最大往返延迟，单位微秒 |
+| srtt | 平滑往返延迟，单位微秒 |
+| rttvar | 往返时间变化，单位微秒 |
+| in_slow_start | 拥塞控制是否处于慢启动状态 |
+| pacing_rate | 由拥塞控制算法估算的Pacing rate |
+
+
+
 ## 其他类型或函数
 
 ### 其他类型
@@ -1213,52 +1308,28 @@ typedef enum quic_multipath_algorithm {
 | ROUND_ROBIN | ROUND_ROBIN以轮询方式在可用路径上发送分组。仅用于测试目的。 |
 
 
-#### quic_log_level
-```c
-typedef enum quic_log_level {
-  QUIC_LOG_LEVEL_OFF,
-  QUIC_LOG_LEVEL_ERROR,
-  QUIC_LOG_LEVEL_WARN,
-  QUIC_LOG_LEVEL_INFO,
-  QUIC_LOG_LEVEL_DEBUG,
-  QUIC_LOG_LEVEL_TRACE,
-} quic_log_level;
-```
-* 日志级别。
-
-
-#### quic_conn_stats_t
-```c
-typedef struct quic_conn_stats_t {
-  uint64_t recv_count;
-  uint64_t recv_bytes;
-  uint64_t sent_count;
-  uint64_t sent_bytes;
-  uint64_t lost_count;
-  uint64_t lost_bytes;
-} quic_conn_stats_t;
-```
-* QUIC连接级别的统计信息。
-
-| 字段 | 含义 |
-| ---------- | ------------ |
-| recv_count | 连接总接收报文数 |
-| recv_bytes | 连接总接收字节数 |
-| sent_count | 连接总发送报文数 |
-| sent_bytes | 连接总发送字节数 |
-| lost_count | 连接总丢失报文数 |
-| lost_bytes | 连接总丢失字节数 |
-
-
-
 ### 其他函数
 
 #### quic_set_logger
 ```c
 void quic_set_logger(void (*cb)(const uint8_t *data, size_t data_len, void *argp),
                      void *argp,
-                     quic_log_level level);
+                     const char *level);
 ```
 * 设置日志回调函数。
 * 对于每条日志，会调用函数`cb`。
 * `data` 代表`\n`结尾的日志消息。`argp`代表传递给回调函数`cb`的用户自定义数据。
+* `level`是一个不区分大小写的字符串，用于指定日志级别。有效值包括 `"OFF"`、`"ERROR"`、`"WARN"`、`"INFO"`、`"DEBUG"` 和 `"TRACE"`。如果其值为NULL或无效，则默认日志级别为`"OFF"`。
+
+
+#### quic_packet_header_info
+```c
+int quic_packet_header_info(uint8_t *buf,
+                            size_t buf_len,
+                            uint8_t dcid_len,
+                            bool *long_header,
+                            uint32_t *version,
+                            struct ConnectionId *dcid);
+```
+* 从QUIC报文中提取头部类型、协议版本、目的CID信息
+

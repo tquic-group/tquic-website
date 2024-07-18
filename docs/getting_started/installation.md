@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Supported Platforms
 
-TQUIC is written in the [Rust language](https://www.rust-lang.org/). Currently, it runs on Linux, MacOS, FreeBSD, iOS, and Android, with future versions planned for other platforms.
+TQUIC is written in the [Rust language](https://www.rust-lang.org/). Currently, it runs on Linux, MacOS, FreeBSD, Windows, iOS, and Android.
 
 
 ## Prerequisites
@@ -98,6 +98,37 @@ If you want to enable the C API, just add `-F ffi` option to the `cargo build` c
 ```bash
 cargo build --release -F ffi
 ```
+  </TabItem>
+
+
+  <TabItem value="Windows" label="Windows">
+
+To build TQUIC for Windows, you need the following:
+
+* [Install Visual Studio](https://visualstudio.microsoft.com/zh-hans/)
+
+* [Install NASM](https://www.nasm.us/)
+
+To build TQUIC for Windows, run the following commands:
+```bash
+git clone https://github.com/tencent/tquic --recursive
+cd tquic
+
+cargo build --release --all
+```
+
+:::tip
+The `--release` option enables cargo to build optimized artifacts and put them in the directory `.\target\release\`, instead of the default location `.\target\debug\`.
+
+The `--all` option enables cargo to build both the tquic library and example tools.
+:::
+
+If you want to enable the C API, just add `-F ffi` option to the `cargo build` command:
+
+```bash
+cargo build --release -F ffi
+```
+
   </TabItem>
 
 

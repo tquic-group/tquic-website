@@ -665,6 +665,15 @@ typedef struct quic_transport_methods_t {
 
 ### Miscellaneous functions
 
+#### quic_endpoint_set_cid_generator
+```c
+void quic_endpoint_set_cid_generator(struct quic_endpoint_t *endpoint,
+                                     const struct ConnectionIdGeneratorMethods *cid_gen_methods,
+                                     ConnectionIdGeneratorContext cid_gen_ctx);
+```
+* Set the connection id generator for the endpoint.
+* By default, the random connection id generator is used.
+
 #### quic_endpoint_exist_connection
 ```c
 bool quic_endpoint_exist_connection(struct quic_endpoint_t *endpoint,
@@ -946,6 +955,27 @@ const struct quic_conn_stats_t *quic_conn_stats(struct quic_conn_t *conn);
 ```
 * Return statistics about the connection.
 
+```c
+typedef struct quic_conn_stats_t {
+  uint64_t recv_count;
+  uint64_t recv_bytes;
+  uint64_t sent_count;
+  uint64_t sent_bytes;
+  uint64_t lost_count;
+  uint64_t lost_bytes;
+} quic_conn_stats_t;
+```
+
+| Item | Description |
+| ---- | ----------- |
+| recv_count | Total number of received packets on the connection |
+| recv_bytes | Total number of bytes received on the connection |
+| sent_count | Total number of sent packets on the connection |
+| sent_bytes | Total number of bytes sent on the connection |
+| lost_count | Total number of lost packets on the connection |
+| lost_bytes | Total number of bytes lost on the connection |
+
+
 
 ## Stream
 
@@ -1145,6 +1175,70 @@ void quic_conn_path_iter_free(struct quic_path_address_iter_t *iter);
 * Destroy the FourTupleIter
 
 
+#### quic_conn_path_stats
+```c
+const struct quic_path_stats_t *quic_conn_path_stats(struct quic_conn_t *conn,
+                                                     const struct sockaddr *local,
+                                                     socklen_t local_len,
+                                                     const struct sockaddr *remote,
+                                                     socklen_t remote_len);
+```
+* Return the latest statistics about the specified path.
+
+```c
+typedef struct quic_path_stats_t {
+  uint64_t recv_count;
+  uint64_t recv_bytes;
+  uint64_t sent_count;
+  uint64_t sent_bytes;
+  uint64_t lost_count;
+  uint64_t lost_bytes;
+  uint64_t acked_count;
+  uint64_t acked_bytes;
+  uint64_t init_cwnd;
+  uint64_t final_cwnd;
+  uint64_t max_cwnd;
+  uint64_t min_cwnd;
+  uint64_t max_inflight;
+  uint64_t loss_event_count;
+  uint64_t cwnd_limited_count;
+  uint64_t cwnd_limited_duration;
+  uint64_t min_rtt;
+  uint64_t max_rtt;
+  uint64_t srtt;
+  uint64_t rttvar;
+  bool in_slow_start;
+  uint64_t pacing_rate;
+} quic_path_stats_t;
+```
+
+| Item | Description |
+| ---- | ----------- |
+| recv_count | The number of QUIC packets received |
+| recv_bytes | The number of received bytes |
+| sent_count | The number of QUIC packets sent |
+| sent_bytes | The number of sent bytes |
+| lost_count | The number of QUIC packets lost |
+| lost_bytes | The number of lost bytes |
+| acked_count | Total number of packets acked |
+| acked_bytes | Total number of bytes acked |
+| init_cwnd | Initial congestion window in bytes |
+| final_cwnd | Final congestion window in bytes |
+| max_cwnd | Maximum congestion window in bytes |
+| min_cwnd | Minimum congestion window in bytes |
+| max_inflight | Maximum inflight data in bytes |
+| loss_event_count | Total loss events |
+| cwnd_limited_count | Total congestion window limited events |
+| cwnd_limited_duration | Total duration of congestion windowlimited events in microseconds |
+| min_rtt | Minimum roundtrip time in microseconds |
+| max_rtt | Maximum roundtrip time in microseconds |
+| srtt | Smoothed roundtrip time in microseconds |
+| rttvar | Roundtrip time variation in microseconds |
+| in_slow_start | Whether the congestion controller is in slow start status |
+| pacing_rate | Pacing rate estimated by congestion control algorithm |
+
+
+
 ## Miscellaneous types and functions
 
 ### Miscellaneous types
@@ -1229,43 +1323,6 @@ typedef enum quic_multipath_algorithm {
 | ROUND_ROBIN | The scheduler sends packets over available paths in a round robin manner. It is only used for testing purposes. |
 
 
-#### quic_log_level
-```c
-typedef enum quic_log_level {
-  QUIC_LOG_LEVEL_OFF,
-  QUIC_LOG_LEVEL_ERROR,
-  QUIC_LOG_LEVEL_WARN,
-  QUIC_LOG_LEVEL_INFO,
-  QUIC_LOG_LEVEL_DEBUG,
-  QUIC_LOG_LEVEL_TRACE,
-} quic_log_level;
-```
-* An enum representing the available verbosity level filters of the logger.
-
-
-#### quic_conn_stats_t
-```c
-typedef struct quic_conn_stats_t {
-  uint64_t recv_count;
-  uint64_t recv_bytes;
-  uint64_t sent_count;
-  uint64_t sent_bytes;
-  uint64_t lost_count;
-  uint64_t lost_bytes;
-} quic_conn_stats_t;
-```
-* Statistics about a QUIC connection.
-
-| Item | Description |
-| ---- | ----------- |
-| recv_count | Total number of received packets on the connection |
-| recv_bytes | Total number of bytes received on the connection |
-| sent_count | Total number of sent packets on the connection |
-| sent_bytes | Total number of bytes sent on the connection |
-| lost_count | Total number of lost packets on the connection |
-| lost_bytes | Total number of bytes lost on the connection |
-
-
 
 ### Miscellaneous functions
 
@@ -1273,9 +1330,22 @@ typedef struct quic_conn_stats_t {
 ```c
 void quic_set_logger(void (*cb)(const uint8_t *data, size_t data_len, void *argp),
                      void *argp,
-                     quic_log_level level);
+                     const char *level);
 ```
 * Set callback for logging.
 * `cb` is a callback function that will be called for each log message.
 * `data` is a `\n` terminated log message and `argp` is user-defined data that will be passed to the callback.
+* `level` is a case-insensitive string used for specifying the log level. Valid values are `"OFF"`, `"ERROR"`, `"WARN"`, `"INFO"`, `"DEBUG"`, and `"TRACE"`. If its value is NULL or invalid, the default log level is "OFF".
+
+
+#### quic_packet_header_info
+```c
+int quic_packet_header_info(uint8_t *buf,
+                            size_t buf_len,
+                            uint8_t dcid_len,
+                            bool *long_header,
+                            uint32_t *version,
+                            struct ConnectionId *dcid);
+```
+* Extract the header form, version and destination connection id from the QUIC packet.
 
