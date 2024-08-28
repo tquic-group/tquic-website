@@ -70,3 +70,18 @@ cargo build --release -F ffi
 
 Please refer to [Library Size Optimization](../further_readings/minimizing_size/)
 
+
+## How to Fix "undefined reference to 'cbrt'" When Linking to a C/C++ Project?
+
+The "undefined reference to 'cbrt'" error occurs because the cbrt function is part of the math library (libm), which needs to be explicitly linked.
+
+For GCC/G++/Clang/Clang++ compilers, you can resolve this by adding the -lm option. If you are using CMake, include the following in your CMakeLists.txt:
+
+```
+target_link_libraries(
+  this_is_your_lib_name 
+  # Add other libraries if needed
+  tquic
+  m
+)
+```

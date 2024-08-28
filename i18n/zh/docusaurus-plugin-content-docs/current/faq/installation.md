@@ -68,3 +68,17 @@ cargo build --release -F ffi
 
 请参考[移动端库文件大小优化](../further_readings/minimizing_size/)
 
+
+## 链接到 C/C++ 项目时，提示 undefined reference cbrt
+
+cbrt 函数是 libm 库的导出函数，开发者在链接需要手动链接 libm 库。对于 GCC/G++/Clang/Clang++ 编译器，尝试使用 -lm 编译选项。如果使用 CMake，尝试添加 
+
+```
+target_link_library(
+  this_is_your_lib_name 
+  # 忽略其它链接库名
+  tquic
+  m
+)
+
+```
