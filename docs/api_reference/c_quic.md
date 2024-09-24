@@ -220,6 +220,27 @@ void quic_config_set_bbr_probe_bw_cwnd_gain(struct quic_config_t *config, double
 * The default value is `2.0`.
 
 
+#### quic_config_set_copa_slow_start_delta
+```c
+void quic_config_set_copa_slow_start_delta(struct quic_config_t *config, double v);
+```
+ * Set the delta in copa slow start state.
+
+
+#### quic_config_set_copa_steady_delta
+```c
+void quic_config_set_copa_steady_delta(struct quic_config_t *config, double v);
+```
+* Set the delta in coap steady state.
+
+
+#### quic_config_enable_copa_use_standing_rtt
+```c
+void quic_config_enable_copa_use_standing_rtt(struct quic_config_t *config, bool v);
+```
+* Enable Using the `RTT Standing` instead of the latest `RTT` to calculate queueing delay.
+
+
 #### quic_config_set_initial_rtt
 ```c
 void quic_config_set_initial_rtt(struct quic_config_t *config, uint64_t v);

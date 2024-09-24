@@ -56,7 +56,7 @@ TQUIC is the only one of these implementations that supports multipath QUIC, the
 
 Most implementations have extensive unit tests, whereas NGINX-QUIC, as mentioned earlier, lacks them and only a limited number of integration tests for QUIC can be found in a [separate repository](https://hg.nginx.org/nginx-tests/file/tip).
 
-TQUIC and QUICHE-CF are written in a memory-safe language, making them immune to Buffer Overflow vulnerability and other memory-related bugs. In contrast, LSQUIC, a C-based library that was open-sourced in 2017, has been consistently [identifying and resolving memory-related bugs](https://github.com/litespeedtech/lsquic/blob/master/CHANGELOG) throughout the years. This is very common for implementations written in C or C++.
+TQUIC and QUICHE-CF are written in a memory-safe language, making them immune to Buffer Overflow vulnerability and other memory-related bugs. In contrast, LSQUIC, a C-based library that was open-sourced in 2017, has been consistently [identifying and resolving memory-related bugs](https://github.com/litespeedtech/lsquic/blob/master/CHANGELOG) throughout the years. Similarly, the NGINX QUIC stack has encountered several [memory-related security vulnerabilities](https://nginx.org/en/security_advisories.html). This is very common for implementations written in C or C++.
 
 
 ## Usability and observability

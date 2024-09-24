@@ -215,6 +215,27 @@ void quic_config_set_bbr_probe_bw_cwnd_gain(struct quic_config_t *config, double
 ```
 * 设置BBR ProbeBW状态下的cwnd gain。
 * 默认值是`2.0`。
+
+
+#### quic_config_set_copa_slow_start_delta
+```c
+void quic_config_set_copa_slow_start_delta(struct quic_config_t *config, double v);
+```
+* 设置COPA算法慢启动状态的delta参数
+
+
+#### quic_config_set_copa_steady_delta
+```c
+void quic_config_set_copa_steady_delta(struct quic_config_t *config, double v);
+```
+* 设置COPA算法在steady状态的delta参数
+
+
+#### quic_config_enable_copa_use_standing_rtt
+```c
+void quic_config_enable_copa_use_standing_rtt(struct quic_config_t *config, bool v);
+```
+* 使用`RTT Standing`而不是最新的`RTT`来计算排队延迟
  
 
 #### quic_config_set_initial_rtt

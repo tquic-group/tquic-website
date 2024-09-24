@@ -56,7 +56,7 @@ TQUIC是这些实现中唯一一个支持多路径QUIC的实现，从而进一�
 
 大多数实现都有丰富的单元测试，而NGINX-QUIC，如前所述缺乏单元测试，只在[单独代码库](https://hg.nginx.org/nginx-tests/file/tip)中包含少量QUIC集成测试。
 
-TQUIC和QUICHE-CF是基于内存安全语言编写的，不受缓冲区溢出漏洞和其他与内存相关的bug影响。相比之下，例如LSQUIC，一个早在2017年开源的基于C语言的库，多年来仍一直[发现和解决内存相关的bug](https://github.com/litespeedtech/lsquic/blob/master/CHANGELOG)。对于C或C++语言的实现，这其实是很常见的。
+TQUIC和QUICHE-CF是基于内存安全语言编写的，不受缓冲区溢出漏洞和其他与内存相关的bug影响。相比之下，例如LSQUIC，一个早在2017年开源的基于C语言的库，多年来仍一直[发现和解决内存相关的bug](https://github.com/litespeedtech/lsquic/blob/master/CHANGELOG)。类似的，NGINX QUIC栈已经也出现多个[内存相关的安全漏洞](https://nginx.org/en/security_advisories.html)。对于C或C++语言的实现，这其实是很常见的。
 
 
 ## 易用性和可观测性
