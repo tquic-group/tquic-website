@@ -96,6 +96,7 @@ Output:
 Misc:
       --send-batch-size <NUM>      Batch size for sending packets [default: 16]
       --zerortt-buffer-size <NUM>  buffer size for disordered zerortt packets on the server [default: 1000]
+      --disable-encryption         Disable encryption on 1-RTT packets
 ```
 
 
@@ -194,6 +195,8 @@ Misc:
           Client will exit if consecutive failure reaches the threshold at the beginning [default: 10]
       --send-batch-size <NUM>
           Batch size for sending packets [default: 1]
+      --disable-encryption
+          Disable encryption on 1-RTT packets
       --max-sample <NUM>
           Number of max samples per thread used for request time statistics [default: 100000]
 ```

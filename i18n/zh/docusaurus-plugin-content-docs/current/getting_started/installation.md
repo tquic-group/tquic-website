@@ -232,9 +232,7 @@ cargo install ohrs
 * 安装Rust Harmony工具链
 
 ```bash
-rustup target add aarch64-unknown-linux-ohos
-rustup target add armv7-unknown-linux-ohos
-rustup target add x86_64-unknown-linux-ohos
+rustup target add aarch64-unknown-linux-ohos armv7-unknown-linux-ohos x86_64-unknown-linux-ohos
 ```
 
 执行如下命令进行编译：

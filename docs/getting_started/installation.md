@@ -235,9 +235,7 @@ cargo install ohrs
 * Install Rust toolchain for Harmony
 
 ```bash
-rustup target add aarch64-unknown-linux-ohos
-rustup target add armv7-unknown-linux-ohos
-rustup target add x86_64-unknown-linux-ohos
+rustup target add aarch64-unknown-linux-ohos armv7-unknown-linux-ohos x86_64-unknown-linux-ohos
 ```
 
 To build the TQUIC library, run the following commands:
