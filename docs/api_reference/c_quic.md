@@ -378,6 +378,36 @@ void quic_config_set_send_batch_size(struct quic_config_t *config,
 * The default value is `64`.
 
 
+#### quic_config_set_zerortt_buffer_size
+```c
+void quic_config_set_zerortt_buffer_size(struct quic_config_t *config, uint16_t v);
+```
+* Set the buffer size for disordered zerortt packets on the server.
+* The default value is `1000`. A value of 0 will be treated as default value.
+* Applicable to Server only.
+
+
+#### quic_config_set_max_undecryptable_packets
+```c
+void quic_config_set_max_undecryptable_packets(struct quic_config_t *config, uint16_t v);
+```
+* Set the maximum number of undecryptable packets that can be stored by one connection.
+* The default value is `10`. A value of 0 will be treated as default value.
+
+
+#### quic_config_enable_encryption
+```
+void quic_config_enable_encryption(struct quic_config_t *config, bool v);
+```
+* Enable or disable encryption on 1-RTT packets. (Experimental)
+* The default value is true.
+
+:::note
+The The disable_1rtt_encryption extension is not meant to be used
+for any practical application protocol on the open internet.
+:::
+
+
 #### quic_config_set_tls_config
 ```c
 void quic_config_set_tls_config(struct quic_config_t *config, struct quic_tls_config_t *tls_config);

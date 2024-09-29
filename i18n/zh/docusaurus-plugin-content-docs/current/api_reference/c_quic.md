@@ -374,6 +374,35 @@ void quic_config_set_send_batch_size(struct quic_config_t *config,
 * 默认值是`64`。
 
 
+#### quic_config_set_zerortt_buffer_size
+```c
+void quic_config_set_zerortt_buffer_size(struct quic_config_t *config, uint16_t v);
+```
+* 设置单个Endpoint暂不可解密ZeroRTT报文队列大小。
+* 默认值是`1000`。`0`代表使用默认值。
+* 仅适用于服务端。
+
+
+#### quic_config_set_max_undecryptable_packets
+```c
+void quic_config_set_max_undecryptable_packets(struct quic_config_t *config, uint16_t v);
+```
+* 设置单个连接暂不可解密报文队列大小。
+* 默认值是`10`。`0`代表使用默认值。
+
+
+#### quic_config_enable_encryption
+```
+void quic_config_enable_encryption(struct quic_config_t *config, bool v);
+```
+* 启用或禁用1RTT报文的加密。 (Experimental)
+* 默认启用。
+
+:::note
+请谨慎更改该配置。`disable_1rtt_encryption`扩展不应用于开放互联网。
+:::
+
+
 #### quic_config_set_tls_config
 ```c
 void quic_config_set_tls_config(struct quic_config_t *config, struct quic_tls_config_t *tls_config);
