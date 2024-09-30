@@ -25,7 +25,7 @@ Then compile TQUIC using the `cargo` command. For more details, see [Building](.
 # iOS
 strip -x ./libtquic.dylib
 
-# Android
+# Android or Harmony
 llvm-strip --strip-unneeded ./libtquic.so
 ```
 

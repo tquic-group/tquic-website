@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Supported Platforms
 
-TQUIC is written in the [Rust language](https://www.rust-lang.org/). Currently, it runs on Linux, MacOS, FreeBSD, Windows, iOS, and Android.
+TQUIC is written in the [Rust language](https://www.rust-lang.org/). Currently, it runs on Linux, MacOS, FreeBSD, Windows, iOS, Android and Harmony.
 
 
 ## Prerequisites
@@ -197,6 +197,51 @@ git clone https://github.com/tencent/tquic --recursive
 cd tquic
 
 cargo lipo --features ffi --release
+```
+
+:::tip
+The `--release` option enables cargo to build optimized artifacts and put them in the directory `./target/release/`, instead of the default location `./target/debug/`.
+
+The `--features ffi` option enables cargo to build the C API.
+:::
+  </TabItem>
+
+
+  <TabItem value="Harmony" label="Harmony">
+
+To build TQUIC for Harmony, you need the following:
+
+* [Install OHOS NDK](https://gitee.com/openharmony/docs/blob/master/zh-cn/release-notes/OpenHarmony-v4.0-release.md#%E4%BB%8E%E9%95%9C%E5%83%8F%E7%AB%99%E7%82%B9%E8%8E%B7%E5%8F%96) and set the `OHOS_NDK_HOME` environment variable
+```bash
+wget https://repo.huaweicloud.com/openharmony/os/4.0-Release/ohos-sdk-windows_linux-public.tar.gz
+tar -xvzf ohos-sdk-windows_linux-public.tar.gz
+cd ohos-sdk/linux/
+unzip native-linux-x64-4.0.10.13-Release.zip
+
+# Set the OHOS_NDK_HOME environment variable to the NDK installation path for Linux
+# eg. export OHOS_NDK_HOME=/path/to/ohos-sdk/linux/
+export OHOS_NDK_HOME=`pwd`
+```
+
+* Set the related environment variables
+```bash
+export CC_aarch64_unknown_linux_ohos=${OHOS_NDK_HOME}/native/llvm/bin/clang
+export AR_aarch64_unknown_linux_ohos=${OHOS_NDK_HOME}/native/llvm/bin/llvm-ar
+```
+
+* Install Rust toolchain for Harmony
+
+```bash
+rustup target add aarch64-unknown-linux-ohos
+```
+
+To build the TQUIC library, run the following commands:
+
+```bash
+git clone https://github.com/tencent/tquic --recursive
+cd tquic
+
+cargo build --target aarch64-unknown-linux-ohos --features ffi --release
 ```
 
 :::tip

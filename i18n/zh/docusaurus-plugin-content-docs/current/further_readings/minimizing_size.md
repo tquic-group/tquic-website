@@ -24,7 +24,7 @@ opt-level = "z"  # Optimize for size
 # iOS
 strip -x ./libtquic.dylib
 
-# Android
+# Android或Harmony
 llvm-strip --strip-unneeded ./libtquic.so
 ```
 

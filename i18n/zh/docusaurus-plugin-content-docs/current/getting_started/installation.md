@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## 支持平台
 
-TQUIC基于Rust语言开发，目前支持Linux、MacOS、FreeBSD、Windows、iOS、Android平台。
+TQUIC基于Rust语言开发，目前支持Linux、MacOS、FreeBSD、Windows、iOS、Android、Harmony平台。
 
 
 ## 环境准备 
@@ -202,6 +202,50 @@ cargo lipo --features ffi --release
 参数`--features ffi`指定cargo编译C接口库
 :::
   </TabItem>
+
+
+  <TabItem value="Harmony" label="Harmony">
+
+要编译Harmony平台的TQUIC库，你需要额外安装如下依赖：
+
+* [安装OHOS NDK](https://gitee.com/openharmony/docs/blob/master/zh-cn/release-notes/OpenHarmony-v4.0-release.md#%E4%BB%8E%E9%95%9C%E5%83%8F%E7%AB%99%E7%82%B9%E8%8E%B7%E5%8F%96) 并设置环境变量`OHOS_NDK_HOME`
+```bash
+wget https://repo.huaweicloud.com/openharmony/os/4.0-Release/ohos-sdk-windows_linux-public.tar.gz
+tar -xvzf ohos-sdk-windows_linux-public.tar.gz
+cd ohos-sdk/linux/
+unzip native-linux-x64-4.0.10.13-Release.zip
+
+# 将环境变量ANDROID_NDK_HOME设置为Linux平台NDK安装路径
+# 例 export OHOS_NDK_HOME=/path/to/ohos-sdk/linux/
+export OHOS_NDK_HOME=`pwd`
+```
+
+* 设置相关的环境变量
+```bash
+export CC_aarch64_unknown_linux_ohos=${OHOS_NDK_HOME}/native/llvm/bin/clang
+export AR_aarch64_unknown_linux_ohos=${OHOS_NDK_HOME}/native/llvm/bin/llvm-ar
+```
+
+* 安装Rust Harmony工具链
+
+```bash
+rustup target add aarch64-unknown-linux-ohos
+```
+
+执行如下命令进行编译：
+
+```bash
+git clone https://github.com/tencent/tquic --recursive
+cd tquic
+
+cargo build --target aarch64-unknown-linux-ohos --features ffi --release
+```
+
+:::tip
+参数`--release`指定cargo编译优化版本，编译结果位于`./target/release/` 目录，而不是默认的`./target/debug/`目录。
+参数`--features ffi`指定cargo编译C接口库
+:::
+   </TabItem>
 
 </Tabs>
 
