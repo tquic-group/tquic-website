@@ -64,6 +64,21 @@ export MACOSX_DEPLOYMENT_TARGET=10.12
 cargo build --release -F ffi
 ```
 
+
+## 如何交叉编译出32位目标平台的TQUIC库？
+
+假如你使用的是Ubuntu Linux 64位系统：
+
+```
+sudo apt-get install gcc-multilib g++-multilib
+rustup target add i686-unknown-linux-gnu
+
+git clone https://github.com/tencent/tquic --recursive
+cd tquic
+cargo build --target i686-unknown-linux-gnu --release --all -F ffi
+```
+
+
 ## 如何优化TQUIC移动端库文件大小
 
 请参考[移动端库文件大小优化](../further_readings/minimizing_size/)

@@ -66,6 +66,20 @@ cargo build --release -F ffi
 ```
 
 
+## How to How to cross-compile TQUIC for 32-bit target platform?
+
+Assuming you are using the 64-bit Ubuntu Linux:
+
+```
+sudo apt-get install gcc-multilib g++-multilib
+rustup target add i686-unknown-linux-gnu
+
+git clone https://github.com/tencent/tquic --recursive
+cd tquic
+cargo build --target i686-unknown-linux-gnu --release --all -F ffi
+```
+
+
 ## How to optimize Library File Size for TQUIC on Mobile Platforms
 
 Please refer to [Library Size Optimization](../further_readings/minimizing_size/)
