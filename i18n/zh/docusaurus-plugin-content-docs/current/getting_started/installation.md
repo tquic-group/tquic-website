@@ -220,16 +220,21 @@ unzip native-linux-x64-4.0.10.13-Release.zip
 export OHOS_NDK_HOME=`pwd`
 ```
 
-* 设置相关的环境变量
+* 安装 ohrs 命令行工具
 ```bash
-export CC_aarch64_unknown_linux_ohos=${OHOS_NDK_HOME}/native/llvm/bin/clang
-export AR_aarch64_unknown_linux_ohos=${OHOS_NDK_HOME}/native/llvm/bin/llvm-ar
+cargo install ohrs
 ```
+
+:::tip
+`ohrs` 是一个命令行工具用于帮助我们构建面向 OpenHarmony 的 Rust 工程. 你可以在这里查看更多信息 [ohos.rs - 命令行工具-构建](https://ohos.rs/docs/cli/build.html)
+:::
 
 * 安装Rust Harmony工具链
 
 ```bash
 rustup target add aarch64-unknown-linux-ohos
+rustup target add armv7-unknown-linux-ohos
+rustup target add x86_64-unknown-linux-ohos
 ```
 
 执行如下命令进行编译：
@@ -238,7 +243,7 @@ rustup target add aarch64-unknown-linux-ohos
 git clone https://github.com/tencent/tquic --recursive
 cd tquic
 
-cargo build --target aarch64-unknown-linux-ohos --features ffi --release
+ohrs build -- --features ffi --release
 ```
 
 :::tip
