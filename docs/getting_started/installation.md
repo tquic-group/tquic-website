@@ -223,16 +223,21 @@ unzip native-linux-x64-4.0.10.13-Release.zip
 export OHOS_NDK_HOME=`pwd`
 ```
 
-* Set the related environment variables
+* Install ohrs tool to help us build
 ```bash
-export CC_aarch64_unknown_linux_ohos=${OHOS_NDK_HOME}/native/llvm/bin/clang
-export AR_aarch64_unknown_linux_ohos=${OHOS_NDK_HOME}/native/llvm/bin/llvm-ar
+cargo install ohrs
 ```
+
+:::tip
+`ohrs` is a scaffolding tool designed to streamline the Rust build process for OpenHarmony. You can see detail with [ohos.rs - cli/build](https://ohos.rs/docs/cli/build.html)
+:::
 
 * Install Rust toolchain for Harmony
 
 ```bash
 rustup target add aarch64-unknown-linux-ohos
+rustup target add armv7-unknown-linux-ohos
+rustup target add x86_64-unknown-linux-ohos
 ```
 
 To build the TQUIC library, run the following commands:
@@ -241,7 +246,7 @@ To build the TQUIC library, run the following commands:
 git clone https://github.com/tencent/tquic --recursive
 cd tquic
 
-cargo build --target aarch64-unknown-linux-ohos --features ffi --release
+ohrs build -- --features ffi --release
 ```
 
 :::tip
