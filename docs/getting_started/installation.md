@@ -223,19 +223,14 @@ unzip native-linux-x64-4.0.10.13-Release.zip
 export OHOS_NDK_HOME=`pwd`
 ```
 
-* Install ohrs tool to help us build
-```bash
-cargo install ohrs
-```
-
-:::tip
-`ohrs` is a scaffolding tool designed to streamline the Rust build process for OpenHarmony. You can see detail with [ohos.rs - cli/build](https://ohos.rs/docs/cli/build.html)
-:::
-
-* Install Rust toolchain for Harmony
+* Install Rust toolchain for Harmony and [ohrs](https://ohos.rs/docs/cli/build.html)
 
 ```bash
+# Install the Rust toolchain for Harmony
 rustup target add aarch64-unknown-linux-ohos armv7-unknown-linux-ohos x86_64-unknown-linux-ohos
+
+# ohrs is a scaffolding tool designed to streamline the Rust build process for OpenHarmony.
+cargo install ohrs
 ```
 
 To build the TQUIC library, run the following commands:

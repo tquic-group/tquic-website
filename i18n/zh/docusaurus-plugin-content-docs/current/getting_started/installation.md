@@ -220,19 +220,14 @@ unzip native-linux-x64-4.0.10.13-Release.zip
 export OHOS_NDK_HOME=`pwd`
 ```
 
-* 安装 ohrs 命令行工具
-```bash
-cargo install ohrs
-```
-
-:::tip
-`ohrs` 是一个命令行工具用于帮助我们构建面向 OpenHarmony 的 Rust 工程. 你可以在这里查看更多信息 [ohos.rs - 命令行工具-构建](https://ohos.rs/docs/cli/build.html)
-:::
-
-* 安装Rust Harmony工具链
+* 安装Rust Harmony工具链和[ohrs](https://ohos.rs/docs/cli/build.html)
 
 ```bash
+# 安装Rust Harmony工具链
 rustup target add aarch64-unknown-linux-ohos armv7-unknown-linux-ohos x86_64-unknown-linux-ohos
+
+# ohrs工具用于帮助构建面向OpenHarmony的Rust工程
+cargo install ohrs
 ```
 
 执行如下命令进行编译：
