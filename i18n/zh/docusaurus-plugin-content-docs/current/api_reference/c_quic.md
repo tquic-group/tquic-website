@@ -396,7 +396,8 @@ void quic_config_set_max_undecryptable_packets(struct quic_config_t *config, uin
 void quic_config_enable_encryption(struct quic_config_t *config, bool v);
 ```
 * 启用或禁用1RTT报文的加密。 (Experimental)
-* 默认启用。
+* 如果该设置为`false`，端点将会通告[`disable_1rtt_encryption`](https://datatracker.ietf.org/doc/html/draft-banks-quic-disable-encryption)传输参数，表示它希望禁用 1-RTT 数据包的加密。双方都必须通告该传输参数，才能成功协商为非加密模式。
+* 默认为`true`。
 
 :::note
 请谨慎更改该配置。`disable_1rtt_encryption`扩展不应用于开放互联网。

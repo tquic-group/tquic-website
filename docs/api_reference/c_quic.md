@@ -400,6 +400,9 @@ void quic_config_set_max_undecryptable_packets(struct quic_config_t *config, uin
 void quic_config_enable_encryption(struct quic_config_t *config, bool v);
 ```
 * Enable or disable encryption on 1-RTT packets. (Experimental)
+* If the setting is false, the endpoint will advertise disable_1rtt_encryption transport 
+  parameter, indicateing that the endpoint wishes to disable encryption for 1-RTT packets.
+  Both sides must advertise this transport parameter for it to be considered successfully negotiated.
 * The default value is true.
 
 :::note
