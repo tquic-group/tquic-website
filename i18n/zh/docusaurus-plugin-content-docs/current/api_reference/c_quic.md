@@ -259,10 +259,10 @@ void quic_config_set_pto_linear_factor(struct quic_config_t *config, uint64_t v)
 
 
 #### quic_config_set_max_pto
-```
+```c
 void quic_config_set_max_pto(struct quic_config_t *config, uint64_t v);
 ```
-* 设置探测超时的最大值，单位是毫秒。探测超(PTO)会触发发送一个或两个探测数据报，使得连接可以恢复丢失的尾包或确认。参见RFC 9000第6.2节。
+* 设置探测超时的最大值，单位是毫秒。探测超时(PTO)会触发发送一个或两个探测数据报，使得连接可以恢复丢失的尾包或确认。参见RFC 9000第6.2节。
 * 默认没有限制。
 
 
@@ -392,7 +392,7 @@ void quic_config_set_max_undecryptable_packets(struct quic_config_t *config, uin
 
 
 #### quic_config_enable_encryption
-```
+```c
 void quic_config_enable_encryption(struct quic_config_t *config, bool v);
 ```
 * 启用或禁用1RTT报文的加密。 (Experimental)
@@ -488,7 +488,7 @@ void quic_tls_config_set_verify(struct quic_tls_config_t *tls_config, bool verif
 
 
 #### quic_tls_config_set_early_data_enabled
-```
+```c
 void quic_tls_config_set_early_data_enabled(struct quic_tls_config_t *tls_config, bool enable);
 ```
 * 设置启用或禁用0-RTT。
@@ -1036,7 +1036,7 @@ int quic_stream_new(struct quic_conn_t *conn,
 
 
 #### quic_stream_bidi_new
-```
+```c
 int quic_stream_bidi_new(struct quic_conn_t *conn,
                          uint8_t urgency,
                          bool incremental,
@@ -1047,7 +1047,7 @@ int quic_stream_bidi_new(struct quic_conn_t *conn,
 
 
 #### quic_stream_uni_new
-```
+```c
 int quic_stream_uni_new(struct quic_conn_t *conn,
                         uint8_t urgency,
                         bool incremental,
@@ -1250,7 +1250,7 @@ typedef struct quic_path_stats_t {
 } quic_path_stats_t;
 ```
 
-| Item | Description |
+| 字段 | 含义 |
 | ---- | ----------- |
 | recv_count | 路径上接收报文数 |
 | recv_bytes | 路径上接收字节数 |

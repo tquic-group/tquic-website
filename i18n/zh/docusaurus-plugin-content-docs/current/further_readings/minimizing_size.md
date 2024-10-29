@@ -14,6 +14,7 @@ sidebar_position: 4
 [profile.release]
 lto = true
 opt-level = "z"  # Optimize for size
+codegen-units = 1
 ```
 
 然后再使用`cargo`命令编译TQUIC，详见[编译说明](../getting_started/installation/)
@@ -35,15 +36,19 @@ llvm-strip --strip-unneeded ./libtquic.so
 
 ## 进一步优化
 
-* 删除不需要的功能
+* 禁用不需要的功能
 
-如果不使用h3，可以手工删除h3相关代码
+如果不使用qlog，可以手工禁用qlog相关代码
+```
+# qlog feature is disabled when building
+cargo build --all --no-default-features -F ffi,h3
+```
 
-如果不使用qlog，可以手工删除qlog相关代码
-
-:::tip
-后续版本将提供编译开关，方便禁用编译某些功能。
-:::
+如果不使用h3，可以手工禁用h3相关代码
+```
+# h3 feature is disabled when building
+cargo build --all --no-default-features -F ffi,qlog
+```
 
 
 ## 更进一步优化

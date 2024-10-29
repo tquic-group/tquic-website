@@ -263,7 +263,7 @@ void quic_config_set_pto_linear_factor(struct quic_config_t *config, uint64_t v)
 
 
 #### quic_config_set_max_pto
-```
+```c
 void quic_config_set_max_pto(struct quic_config_t *config, uint64_t v);
 ```
 * Set the upper limit of probe timeout in milliseconds. A Probe Timeout (PTO) triggers the sending of one or two probe datagrams and enables a connection to recover from loss of tail packets or acknowledgments. See RFC 9002 Section 6.2.
@@ -396,7 +396,7 @@ void quic_config_set_max_undecryptable_packets(struct quic_config_t *config, uin
 
 
 #### quic_config_enable_encryption
-```
+```c
 void quic_config_enable_encryption(struct quic_config_t *config, bool v);
 ```
 * Enable or disable encryption on 1-RTT packets. (Experimental)
@@ -495,7 +495,7 @@ void quic_tls_config_set_verify(struct quic_tls_config_t *tls_config, bool verif
 
 
 #### quic_tls_config_set_early_data_enabled
-```
+```c
 void quic_tls_config_set_early_data_enabled(struct quic_tls_config_t *tls_config, bool enable);
 ```
 * Set whether early data is allowed.
@@ -1052,7 +1052,7 @@ for unidrectional streams.
 
 
 #### quic_stream_bidi_new
-```
+```c
 int quic_stream_bidi_new(struct quic_conn_t *conn,
                          uint8_t urgency,
                          bool incremental,
@@ -1063,7 +1063,7 @@ int quic_stream_bidi_new(struct quic_conn_t *conn,
 
 
 #### quic_stream_uni_new
-```
+```c
 int quic_stream_uni_new(struct quic_conn_t *conn,
                         uint8_t urgency,
                         bool incremental,
