@@ -12,7 +12,7 @@ sidebar_position: 4
 该密钥日志文件可以用来在Wireshark中解密QUIC流量。
 
 :::tip
-在wireshake中，依次打开`Edit-> Preferences-> Protocols-> TLS`，然后将`(Pre)-Master-Secret log filename preference`设置为TLS密钥日志文件路径
+在wireshark中，依次打开`Edit-> Preferences-> Protocols-> TLS`，然后将`(Pre)-Master-Secret log filename preference`设置为TLS密钥日志文件路径
 :::
 
 
