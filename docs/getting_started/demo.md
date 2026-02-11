@@ -15,7 +15,7 @@ The example tools are built by adding an option `--all` to the `cargo build` com
 
 ### Run the quic server
 ```bash
-./tquic_server -c cert.crt -k cert.key -l 127.0.0.1:8443
+./tquic_server -c ../../src/tls/testdata/cert.crt -k ../../src/tls/testdata/cert.key -l 127.0.0.1:8443 
 ```
 
 The server is configured to listen on the address `127.0.0.1:8443` and act as an HTTP/3 file server.
